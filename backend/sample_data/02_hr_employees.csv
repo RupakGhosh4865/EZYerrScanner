@@ -1,0 +1,64 @@
+employee_id,full_name,email,department,position,employment_status,join_date,salary,bonus,performance_score,manager_id,phone,address
+EMP0001,Sneha Patel,emp1@company.com,Sales,Director,Active,2024-06-03,112947.56,4051.67,3,EMP0027,+91-8065870178,
+EMP0002,Arjun Rao,emp2@company.com,Sales,Senior,on leave,2024-12-11,61341.46,4289.71,2,EMP0043,,
+EMP0003,Vikram Kumar,emp3@company.com,Operations,Intern,On Leave,2025-05-18,116854.46,15880.94,5,EMP0002,,"46 Main St, City"
+EMP0004,Vikram Kumaa,emp4@company.com,Engineering,Intern,On Leave,2019-08-24,116440.76,8050.41,3,EMP0033,,"49 Main St, City"
+EMP0005,Ankit Sharma,emp5@company.com,Legal,Intern,terminated,2023-04-20,29216.72,4203.88,2,EMP0005,+91-8418198351,"170 Main St, City"
+EMP0006,Vikram Singh,emp6@company.com,Operations,Director,INACTIVE,2024-10-04,-45000.0,7514.96,3,EMP0013,+91-8628416575,"45 Main St, City"
+EMP0007,Arjun Singh,emp7@company.com,HR,Senior,On Leave,2019-10-10,53590.24,8421.8,5,EMP0030,+91-9901796894,
+EMP0008,Rohit Verma,emp8@company.com,HR,Intern,terminated,2020-11-06,100404.86,12710.07,15,,+91-8008752943,"58 Main St, City"
+EMP0009,Arjun Gupta,emp9@company.com,Finance,Intern,active,2023-12-04,38998.63,3552.12,5,EMP0045,+91-8716495971,
+EMP0010,Priya Joshi,emp10@company.com,Sales,Senior,ON LEAVE,2026-02-04,109802.68,10201.76,5,EMP0055,,
+EMP0011,Meera Rao,emp11@company.com,Legal,Intern,On Leave,2020-12-11,88419.88,14687.77,5,EMP0011,+91-9038711176,"193 Main St, City"
+EMP0012,Vikram Rao,emp12@company.com,Operations,Senior,inactive,2023-05-21,104786.97,9218.58,3,EMP0022,+91-9319936135,
+EMP0013,Rohit Gupta,emp13@company.com,Engineering,Director,On Leave,2024-06-19,46969.84,3108.29,4,EMP0014,+91-8672790155,"150 Main St, City"
+EMP0014,Ankit Rao,emp14@company.com,Engineering,Manager,inactive,2025-12-08,106389.54,16032.37,4,EMP0048,+91-9590950133,"125 Main St, City"
+EMP0015,Pooja Sharma,emp15@company.com,Finance,Manager,terminated,2023-09-12,50928.85,6917.58,4,EMP0054,+91-7548157187,"137 Main St, City"
+EMP0016,Arjun Verma,emp16@company.com,Operations,Director,ACTIVE,2025-11-08,111158.24,19271.53,2,,+91-7909074012,"87 Main St, City"
+EMP0017,Ankit Singh,emp17@company.com,Engineering,Director,Active,2021-11-27,51434.38,7705.12,1,EMP0023,+91-7294713656,"167 Main St, City"
+EMP0018,Sneha Gupta,emp18@company.com,Engineering,Intern,ACTIVE,2025-09-15,96652.15,4611.18,4,EMP0037,+91-8997305752,"197 Main St, City"
+EMP0019,Priya Patel,emp19@company.com,HR,Junior,Terminated,2022-01-08,40939.97,210.25,3,EMP0059,+91-8703617827,"51 Main St, City"
+EMP0020,Sneha Verma,emp20@company.com,Operations,Manager,terminated,2025-04-21,81249.3,9756.6,1,EMP0037,+91-8491228808,"170 Main St, City"
+EMP0021,Meera Sharma,emp21@company.com,Finance,Director,active,2022-01-01,-1200.0,2735.61,3,EMP0054,+91-7657091982,"188 Main St, City"
+EMP0022,Vikram Rao,emp22@company.com,Finance,Director,Terminated,2020-04-21,116720.0,6265.43,2,EMP0006,+91-8936179853,
+EMP0023,Ankit Kumar,emp23@company.com,Engineering,Director,INACTIVE,2020-12-11,79135.72,2878.01,2,EMP0017,+91-9560466250,"71 Main St, City"
+EMP0024,Sneha Verma,emp24@company.com,Sales,Director,on leave,2019-12-04,25964.36,2882.96,2,EMP0042,+91-8924895021,"24 Main St, City"
+EMP0025,Sneha Singh,emp25@company.com,Operations,Intern,INACTIVE,2022-11-09,46051.66,4358.89,5,EMP0048,+91-8511014697,"70 Main St, City"
+EMP0026,Priya Gupta,emp26@company.com,HR,Junior,ON LEAVE,2022-09-20,48883.35,9296.42,-3,EMP0048,+91-9532256470,"135 Main St, City"
+EMP0027,Priya Gupta,emp27@company.com,HR,Senior,INACTIVE,2019-06-19,51884.88,1862.06,1,EMP0009,+91-7234187462,"179 Main St, City"
+EMP0028,Pooja Verma,emp28@company.com,Engineering,Intern,inactive,2024-09-27,85597.62,8035.85,4,EMP0004,+91-9051831252,
+EMP0029,Priya Sharma,emp29@company.com,Sales,Senior,Terminated,2025-06-04,63067.21,11971.74,1,EMP0008,+91-8787453807,"159 Main St, City"
+EMP0030,Ankit Rao,emp30@company.com,Finance,Manager,Terminated,2023-08-17,98690.89,19541.41,3,EMP0004,+91-7426204934,"54 Main St, City"
+EMP0031,Priya Patel,emp31@company.com,Sales,Senior,ON LEAVE,2023-10-16,980000.0,752.77,1,EMP0045,+91-8250949136,
+EMP0032,Pooja Verma,emp32@company.com,Operations,Senior,inactive,2022-12-04,92160.8,14521.37,5,EMP0060,,
+EMP0033,Vikram Patel,emp33@company.com,Engineering,Junior,ACTIVE,2023-08-21,86525.3,13716.48,5,EMP0037,+91-8886149718,
+EMP0034,Vikram Rao,emp34@company.com,Finance,Junior,Terminated,2022-09-30,91474.7,729.25,4,EMP0039,+91-7392245997,
+EMP0035,Arjun Singh,emp35@company.com,Legal,Junior,ACTIVE,2019-09-15,80776.68,7601.1,4,EMP0012,+91-8872111746,"126 Main St, City"
+EMP0036,Ankit Kumar,emp36@company.com,HR,Junior,ACTIVE,2025-02-18,69650.99,4594.23,4,EMP0026,+91-9362646960,
+EMP0037,Meera Verma,emp37@company.com,Finance,Intern,Active,2025-03-03,54879.13,7218.37,5,EMP0004,,
+EMP0038,Arjun Gupta,emp38@company.com,HR,Intern,ACTIVE,2020-07-26,84413.83,15661.68,4,EMP0032,,"156 Main St, City"
+EMP0039,Vikram Sharma,emp39@company.com,Legal,Director,active,2023-06-22,92429.37,4153.79,1,EMP0008,+91-7661300942,"184 Main St, City"
+EMP0040,Vikram Joshi,emp40@company.com,Finance,Director,Inactive,2022-11-19,73342.84,6700.4,2,EMP0059,+91-7586298866,"71 Main St, City"
+EMP0041,Vikram Sharma,emp41@company.com,HR,Manager,Terminated,2021-07-03,57288.15,6644.55,4,EMP0029,+91-8482296058,
+EMP0042,Meera Gupta,emp42@company.com,Operations,Senior,Terminated,2020-01-24,60834.96,4659.6,4,,+91-8637375316,
+EMP0043,Arjun Patel,emp43@company.com,Legal,Intern,INACTIVE,2024-06-13,72056.22,12533.46,4,,+91-7065917432,"105 Main St, City"
+EMP0044,Vikram Kumar,emp44@company.com,Legal,Director,terminated,2024-06-04,32108.68,515.76,3,EMP0055,+91-8360049298,"195 Main St, City"
+EMP0045,Arjun Verma,emp45@company.com,Sales,Manager,Inactive,2020-09-07,107876.39,16111.69,4,EMP0049,+91-7431675310,"178 Main St, City"
+EMP0046,Arjun Kumar,emp46@company.com,Engineering,Manager,INACTIVE,2022-10-19,110825.29,8308.37,2,EMP0027,+91-7773338452,
+EMP0047,Ankit Gupta,emp47@company.com,Finance,Intern,ACTIVE,2025-04-09,82901.72,3849.76,3,EMP0043,,"74 Main St, City"
+EMP0048,Pooja Kumar,emp48@company.com,Legal,Manager,terminated,2020-01-11,40007.68,7697.71,3,EMP0020,,
+EMP0049,Ankit Kumar,emp49@company.com,Legal,Manager,inactive,2020-09-26,35132.06,154.16,4,EMP0037,+91-7210643427,"191 Main St, City"
+EMP0050,Vikram Gupta,emp50@company.com,Legal,Manager,Inactive,2020-08-02,104119.7,13256.89,5,EMP0049,+91-9831163141,"36 Main St, City"
+EMP0051,Arjun Singh,emp51@company.com,Finance,Junior,Terminated,2025-01-25,110823.35,8087.03,2,,+91-8784572192,
+EMP0052,Meera Singh,emp52@company.com,Sales,Manager,on leave,2024-09-03,99718.72,19293.26,3,EMP0022,+91-9011467975,"37 Main St, City"
+EMP0053,Ankit Kumar,emp53@company.com,Engineering,Director,Active,2023-08-17,106713.36,5644.25,1,EMP0044,+91-8125974687,"164 Main St, City"
+EMP0054,Sneha Rao,emp54@company.com,Engineering,Intern,ON LEAVE,2021-12-28,35292.88,2315.26,5,EMP0005,+91-8994013856,"78 Main St, City"
+EMP0055,Arjun Sharma,emp55@company.com,HR,Director,active,2021-07-30,36084.21,701.42,5,,+91-9879716355,"179 Main St, City"
+EMP0056,Rohit Joshi,emp56@company.com,Operations,Junior,on leave,2020-02-06,64817.04,7980.95,3,,+91-8904315855,"61 Main St, City"
+EMP0057,Meera Kumar,emp57@company.com,Engineering,Director,inactive,2022-02-02,34438.69,1307.35,1,EMP0053,+91-9846570058,
+EMP0058,Arjun Kumar,emp58@company.com,Sales,Senior,Terminated,2019-06-18,117253.86,4812.23,5,EMP0014,+91-8000721711,
+EMP0059,Arjun Singh,emp59@company.com,Sales,Senior,ON LEAVE,2024-07-02,99921.16,5009.13,2,,+91-7566090561,
+EMP0060,Arjun Patel,emp60@company.com,HR,Junior,ACTIVE,2023-06-28,80941.03,12007.08,5,,,"93 Main St, City"
+EMP0002,Arjun Rao,emp2@company.com,Sales,Senior,on leave,2024-12-11,61341.46,4289.71,2,EMP0043,,
+EMP0002,Arjun Rao,emp2@company.com,Sales,Senior,on leave,2024-12-11,61341.46,4289.71,2,EMP0043,,
+EMP0015,Pooja Sharma,emp15@company.com,Finance,Manager,terminated,2023-09-12,50928.85,6917.58,4,EMP0054,+91-7548157187,"137 Main St, City"

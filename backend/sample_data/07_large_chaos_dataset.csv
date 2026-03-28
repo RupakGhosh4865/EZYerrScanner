@@ -1,0 +1,216 @@
+record_id,name,assignee,department,status,priority,category,start_date,end_date,due_date,budget,actual_cost,quantity,unit_price,completion_pct,score,email,phone,region,updated_at,notes,supplier,approved_by
+REC0001,Isla Scott Task 1,Alice Smith,Engineering,Cancelled,Medium,Clothing,2025-12-12,2025-12-26,2025-12-26,130491.67,3865.56,248,2845.89,58,9.3,user1@valid.com,,West,2025-09-30,,,
+REC0002,Bob Jones Task 2,Alice Smith,Operations,Completed,Low,Furniture,2025-07-04,2025-09-01,2025-09-01,79731.93,93843.91,273,3023.27,50,0.2,user2@valid.com,2283298067,South,2025-07-06,See attachment,,
+REC0003,Eva Brown Task 3,Eva Brown,Unknown,in progress,URGENT,Electronics,2026-01-15,2025-12-29,2025-12-29,131252.41,1535777.91,825,544.53,36,8.7,user3@valid.com,3397657114,East,2026-02-06,,,
+REC0004,David Black Task 4,Eva Brown,Unknown,completed,Low,Tools,2025-04-26,2025-04-17,2025-04-17,44839.58,72781.91,110,2087.95,142,-5.0,user4@valid.com,,South,2025-07-14,,,Manager
+REC0005,Jack Miller Task 5,Henry Wang,HR,completed,high,Clothing,2026-01-16,2026-01-21,2026-01-21,68862.64,117516.36,636,4926.52,60,-3.0,user5@INVALID,,South,2025-06-05,See attachment,,
+REC0006,Jack Miller Taskxx,Grace Lee,Unknown,Cancelled,URGENT,Electronics,2026-01-20,2026-03-19,,87025.43,60739.39,372,4725.38,418,10.1,user6@valid.com,,North,2025-11-20,,,
+REC0007,Carol White Task 7,Bob Jones,Engineering,in progress,Low,,2025-09-12,2025-09-09,2025-09-09,117939.8,246175.12,335,1885.16,14,1.9,user7@valid.com,1809283659,West,2025-11-28,,,
+REC0008,Bob Jones Task 8,Frank Green,Engineering,in progress,low,Tools,2026-03-16,2026-05-10,2026-05-10,101174.39,1249700.32,598,4970.74,149,-3.0,user8@valid.com,,North,2025-08-26,,,
+REC0009,Alice Smith Task 9,Eva Brown,Unknown,In Progress,low,Tools,2025-04-02,2025-11-11,2025-11-11,41496.24,101771.28,418,4068.59,403,5.2,user9@valid.com,,North,2025-11-27,,,
+REC0010,Grace Lee Task 10,Eva Brown,HR,active,urgent,,16/09/2025,2025-06-29,2025-07-08,71905.41,173199.55,482,1318.32,-20,-4.7,user10@INVALID,,Central,2025-07-18,,,
+REC0011,Grace Lee Task xx,Henry Wang,Legal,DONE,URGENT,Electronics,2025-03-22,2025-03-14,,181003.49,110675.73,30,4187.37,72,11.0,user11@valid.com,1197092148,South,2025-12-30,,,
+REC0012,Grace Lee Task 12,Grace Lee,,DONE,high,,2025-09-18,2025-10-11,2025-10-11,36982.45,61903.35,421,3068.66,22,-2.7,user12@valid.com,,South,2026-02-02,,,
+REC0013,Frank Green Task 13,Jack Miller,Engineering,pending,URGENT,,2025-08-15,2025-08-18,,122458.97,176279.07,37,-151.65,147,1.3,user13@valid.com,3426709025,,2025-10-05,,,Auto
+REC0014,Grace Lee Task 14,Carol White,Engineering,Active,low,Clothing,2025-11-20,2025-12-31,2025-12-31,69477.02,114116.79,497,4281.79,-1,10.0,user14@valid.com,2194675791,Central,2025-12-03,See attachment,,
+REC0015,Henry Wang Task 15,Bob Jones,,Blocked,Low,Furniture,2025-08-04,2025-09-09,2025-09-09,160351.63,418250.99,8,64.54,85,-4.3,user15@valid.com,8033172680,Central,2025-06-13,,,
+REC0016,Henry Wang Task xx,Isla Scott,,In Progress,low,,2026-02-28,2026-03-08,,168941.33,448981.83,217,-487.92,70,11.6,user16@valid.com,,Central,2025-09-17,See attachment,,
+REC0017,Jack Miller Task 17,David Black,Finance,Pending,high,,2026-01-15,2026-02-16,2026-02-16,21838.82,63025.51,185,3442.33,-28,10.1,user17@INVALID,9125023089,West,2025-07-12,,,Manager
+REC0018,Henry Wang Task 18,Isla Scott,HR,In Progress,low,Clothing,2025-06-17,2025-11-01,2025-11-01,167843.81,386263.38,610,4354.83,109,12.6,user18@valid.com,6361144788,West,2025-12-23,See attachment,,
+REC0019,Isla Scott Task 19,Eva Brown,Operations,Done,Medium,Food,09/09/2025,2025-10-24,2025-10-24,140152.85,142539.41,343,4566.55,13,14.6,user19@valid.com,8934097788,North,2025-07-03,,,
+REC0020,Carol White Task 20,Eva Brown,Legal,pending,high,Electronics,2026-02-27,2026-03-04,2026-03-04,53762.16,55535.88,761,2476.45,71,11.3,user20@INVALID,4714465905,,2025-06-13,,,
+REC0021,Carol White Task xx,Grace Lee,Operations,active,High,Tools,2025-10-31,2025-10-17,2025-10-17,185333.72,563595.18,871,4285.65,37,13.2,user21@valid.com,3591527330,,2025-12-18,,,Manager
+REC0022,Alice Smith Task 22,Grace Lee,Legal,DONE,Medium,Clothing,2025-12-29,2026-02-12,2026-02-12,24311.09,21699.02,328,2064.82,19,-4.2,user22@valid.com,6588417397,Central,2025-06-19,,,
+REC0023,Carol White Task 23,Grace Lee,Unknown,ACTIVE,Low,Food,2025-07-04,2025-06-22,2025-06-22,157358.52,365334.66,329,1484.39,35,14.0,user23@valid.com,3788722772,North,2025-10-01,,,
+REC0024,Bob Jones Task 24,Grace Lee,Legal,Completed,High,Stationery,2025-10-14,2025-11-11,2025-11-11,183228.52,326252.04,488,-258.82,146,99.0,user24@valid.com,9621419224,North,2025-12-10,See attachment,,
+REC0025,Bob Jones Task 25,Carol White,Engineering,Blocked,low,Stationery,2025-06-25,2025-07-30,,129488.95,33196.84,172,3868.18,122,-3.6,user25@valid.com,7045736747,West,2025-09-01,,,
+REC0026,Bob Jones Task xx,Alice Smith,Sales,In Progress,urgent,Furniture,2026-03-24,2026-05-22,2026-05-22,13115.9,31485.71,611,-24.22,92,2.6,user26@valid.com,,South,2025-06-27,,,
+REC0027,Alice Smith Task 27,Isla Scott,HR,Pending,High,Electronics,2025-10-26,2026-02-12,2026-02-12,191499.63,264132.75,550,4708.39,58,-0.8,user27@valid.com,6204370540,,2025-12-11,,,
+REC0028,Jack Miller Task 28,Alice Smith,,ACTIVE,Low,Furniture,2025-12-18,2025-12-12,2025-12-12,36680.92,25345.11,584,2179.55,64,2.1,user28@valid.com,,East,2026-02-20,See attachment,,
+REC0029,Carol White Task 29,Jack Miller,Operations,completed,URGENT,Clothing,2025-04-24,2025-05-13,,138844.9,119630.57,216,3417.1,144,3.7,user29@valid.com,,,2025-10-09,See attachment,,
+REC0030,Carol White Task 30,Jack Miller,Sales,DONE,high,Clothing,2025-10-22,2025-12-03,2025-12-03,110558.53,76010.29,741,4374.85,-1,9.5,user30@valid.com,3712815143,Central,2025-06-04,,,
+REC0031,Isla Scott Task 31,Henry Wang,HR,In Progress,URGENT,Food,13/01/2026,2026-01-02,2026-01-02,178850.19,369075.72,867,1100.5,98,5.0,user31@INVALID,9635425513,South,2026-01-02,See attachment,,
+REC0032,Carol White Task 32,Henry Wang,Operations,active,Medium,,2025-06-11,2025-08-02,2025-08-02,132052.95,122181.98,229,-264.55,32,5.4,user32@valid.com,9237326112,North,2026-03-07,See attachment,,
+REC0033,Eva Brown Task 33,Jack Miller,HR,in progress,low,,2025-05-07,2025-05-22,2025-05-22,167057.02,1138579.02,845,-71.89,44,2.5,user33@valid.com,9021793855,West,2025-07-24,See attachment,,Director
+REC0034,Eva Brown Task 34,David Black,HR,PENDING,Medium,Stationery,2026-01-02,2026-01-11,2026-01-11,15879.1,45403.79,666,766.9,64,9.4,user34@valid.com,8874242713,North,2025-11-23,,,
+REC0035,Jack Miller Task 35,Carol White,Engineering,PENDING,Low,Clothing,2025-05-09,2025-06-23,2025-06-23,8318.58,11804.87,982,2599.83,-16,12.6,user35@valid.com,5068424407,South,2025-08-10,See attachment,,
+REC0036,Jack Miller Task 36,Carol White,Legal,PENDING,low,Stationery,2025-08-29,2025-10-24,2025-10-24,28971.07,1031993.66,60,763.98,310,-2.4,user36@INVALID,8234304760,South,2026-02-06,,,
+REC0037,Carol White Task 37,Jack Miller,Engineering,IN PROGRESS,urgent,,2025-07-13,2025-07-08,2025-07-08,19091.4,2902.54,532,1859.26,103,10.8,user37@valid.com,5714658227,South,2025-11-17,,,Director
+REC0038,David Black Task 38,Alice Smith,Engineering,cancelled,High,Electronics,2025-05-25,2025-07-13,2025-07-13,82025.02,58973.15,813,1237.46,72,-2.9,user38@valid.com,7597520265,Central,2025-09-21,See attachment,,Director
+REC0039,Frank Green Task 39,Isla Scott,,DONE,Low,Stationery,2025-06-18,2025-08-08,2025-08-08,96752.32,134819.92,131,4202.49,148,-2.6,user39@valid.com,5076977004,North,2025-12-08,,,
+REC0040,Carol White Task 40,Henry Wang,Unknown,ACTIVE,High,Tools,2025-05-06,2025-04-16,2025-04-16,160971.69,45094.46,28,3484.72,305,7.3,user40@valid.com,3566125120,South,2025-07-17,,,
+REC0041,Jack Miller Task 41,Isla Scott,Finance,PENDING,low,Electronics,2026-03-26,2025-08-24,2025-11-05,7205.07,16518.11,989,365.95,50,10.6,user41@valid.com,3517195150,Central,2026-03-20,See attachment,,
+REC0042,Frank Green Task 42,Frank Green,Legal,done,urgent,Food,2025-11-02,2025-12-23,2025-12-23,183044.29,258796.74,-6,936.09,84,5.1,user42@valid.com,8626138802,,2025-08-04,See attachment,,
+REC0043,David Black Task 43,David Black,Operations,IN PROGRESS,Low,Electronics,2026-02-21,2026-03-21,2026-03-21,126915.53,116981.08,284,11.55,67,-3.5,user43@valid.com,2518433834,Central,2025-11-10,,,
+REC0044,David Black Task 44,David Black,Finance,in progress,high,Stationery,2025-11-27,2025-10-15,2025-10-15,174612.13,65202.35,932,-68.32,149,4.9,user44@INVALID,5114549022,West,2026-01-19,See attachment,,
+REC0045,Isla Scott Task 45,Eva Brown,Unknown,done,high,Clothing,2025-11-07,2025-12-19,,36982.94,103457.73,479,4668.1,-12,5.0,user45@valid.com,6045729129,North,2025-07-05,,,
+REC0046,Jack Miller Task 46,Eva Brown,HR,active,Medium,Tools,2025-06-03,2026-01-29,2026-01-29,65424.52,140387.55,364,511.53,88,-0.8,user46@valid.com,8964269909,East,2026-01-11,,,
+REC0047,Isla Scott Task 47,Grace Lee,Unknown,Done,Medium,Clothing,2026-02-04,2026-02-18,2026-02-18,160915.47,5486.9,421,2247.79,141,5.3,user47@valid.com,6583604299,Central,2025-06-10,,,
+REC0048,Bob Jones Task 48,Henry Wang,Operations,active,Low,Stationery,2025-12-07,2025-09-25,2025-09-25,95569.62,311696.11,253,1392.77,85,-2.6,user48@valid.com,8646369354,East,2025-11-15,See attachment,,Manager
+REC0049,Carol White Task 49,Carol White,Operations,IN PROGRESS,low,,2025-09-13,2025-11-10,2025-11-10,57661.45,14398.31,155,-1369.43,-62,1.3,user49@valid.com,,,2025-09-06,,,
+REC0050,Henry Wang Task 50,Grace Lee,HR,PENDING,high,Electronics,2025-03-10,2025-05-04,,104426.67,85754.68,247,4672.41,0,20.0,user50@valid.com,,West,2025-06-20,,,
+REC0051,Grace Lee Task 51,Eva Brown,Finance,ACTIVE,low,Tools,10/21/2025,2025-09-29,2025-09-29,17320.1,7663.12,529,4111.85,-13,-4.3,user51@valid.com,9006854740,West,2026-01-02,See attachment,,
+REC0052,Jack Miller Task 52,Henry Wang,Unknown,cancelled,low,Tools,05/01/2026,2025-06-13,2025-05-23,35818.81,60382.67,222,3925.89,93,-5.0,user52@valid.com,,North,2026-03-27,,,
+REC0053,Henry Wang Task 53,Henry Wang,Legal,Pending,high,,2025-07-30,2025-09-25,2025-09-25,2159.26,4511.8,805,-460.3,-87,-1.2,user53@valid.com,2073295668,,2025-10-16,See attachment,,
+REC0054,Jack Miller Task 54,Eva Brown,Legal,DONE,URGENT,Food,2026-03-20,2025-05-02,2025-05-21,-45714.79,66117.67,286,-724.71,96,7.4,user54@valid.com,6101516825,North,2026-01-09,,,
+REC0055,Henry Wang Task 55,Alice Smith,Finance,ACTIVE,Medium,Electronics,2026-02-03,2026-02-19,2026-02-19,54204.43,64866.17,309,3821.49,107,15.0,user55@valid.com,2418407139,South,2026-02-27,,,Manager
+REC0056,Alice Smith Task 56,Bob Jones,Finance,in progress,high,,2026-03-23,2025-08-21,2025-12-31,163541.52,569267.41,193,2034.59,4,5.4,user56@valid.com,2387545832,,2026-03-06,See attachment,,
+REC0057,Alice Smith Task 57,David Black,Sales,done,low,,2026-03-21,2025-05-11,2025-08-11,40145.36,23515.6,272,2715.83,81,10.8,user57@INVALID,,,2025-07-27,See attachment,,
+REC0058,Jack Miller Task 58,Frank Green,Engineering,active,Low,Clothing,2026-01-06,2026-02-18,2026-02-18,18734.61,51897.34,118,2183.14,61,14.6,user58@valid.com,1828779668,,2025-09-15,,,Director
+REC0059,Isla Scott Task 59,Henry Wang,Finance,PENDING,urgent,Stationery,2025-03-31,2025-05-06,2025-05-06,-26609.96,183652.45,878,4072.42,121,-1.8,user59@valid.com,8814343168,Central,2025-09-21,,,Manager
+REC0060,David Black Task 60,Frank Green,Sales,active,Medium,,2025-05-14,2025-10-15,2025-10-15,-28603.23,83786.44,279,1274.3,144,1.4,user60@INVALID,5027818352,South,2025-12-16,,,
+REC0061,Isla Scott Task 61,Jack Miller,Legal,active,Low,Food,2026-03-27,2025-06-06,2025-07-07,131755.29,32683.07,942,4565.69,147,4.8,user61@valid.com,,,2026-02-24,,,Auto
+REC0062,Alice Smith Task 62,Bob Jones,Legal,ACTIVE,Medium,Furniture,2026-02-26,2026-04-25,,53530.22,43282.56,384,542.03,114,-3.0,user62@valid.com,7692167252,,2026-02-01,See attachment,,
+REC0063,Carol White Task 63,Carol White,Unknown,cancelled,Low,Clothing,2025-04-21,2025-05-25,2025-05-25,176623.39,370857.03,945,1437.78,60,6.0,user63@valid.com,8014715913,,2025-10-13,See attachment,,
+REC0064,Eva Brown Task 64,Frank Green,,Blocked,URGENT,Electronics,2025-02-28,2025-04-19,2025-04-19,185266.31,637380.51,600,-410.34,14,99.0,user64@valid.com,1952996130,East,2026-03-16,See attachment,,
+REC0065,Carol White Task 65,Bob Jones,Engineering,Blocked,Low,Clothing,2025-06-16,2025-08-08,,185221.53,237970.79,586,874.21,45,11.2,user65@INVALID,4942272347,,2026-02-16,See attachment,,
+REC0066,Bob Jones Task 66,Jack Miller,Legal,active,low,,2025-04-02,2025-05-25,,163993.3,32098.32,779,1339.14,91,3.3,user66@valid.com,9639044885,,2025-09-13,,,
+REC0067,David Black Task 67,Carol White,Engineering,in progress,URGENT,Furniture,2025-06-11,2025-06-10,2025-06-10,65702.91,66638.56,393,314.07,66,-3.3,user67@valid.com,,West,2025-11-13,,,
+REC0068,David Black Task 68,Henry Wang,Unknown,Done,urgent,Food,2025-03-02,2025-02-27,2025-02-27,96444.04,89876.18,430,1278.76,127,-3.2,user68@valid.com,2495970877,East,2025-10-02,See attachment,,
+REC0069,Henry Wang Task 69,Jack Miller,HR,Blocked,High,Food,2026-03-25,2025-11-05,2025-11-26,164406.02,215104.36,765,3506.68,1,-2.8,user69@INVALID,4980273734,East,2026-03-20,,,
+REC0070,David Black Task 70,David Black,Legal,Cancelled,urgent,Clothing,2025-10-09,2025-10-15,2025-10-15,148132.59,346469.1,375,2706.53,149,5.5,user70@valid.com,,South,2025-11-09,,,
+REC0071,Frank Green Task 71,Bob Jones,Engineering,Completed,high,,2025-04-23,2025-05-07,2025-05-07,132764.84,176903.07,990,3403.29,60,4.7,user71@valid.com,,South,2025-07-14,See attachment,,
+REC0072,Henry Wang Task 72,Grace Lee,HR,Active,Low,Stationery,2025-11-21,2026-01-07,2026-01-07,61333.04,64899.05,991,4882.23,50,11.2,user72@valid.com,2203423402,South,2025-10-04,See attachment,,
+REC0073,David Black Task 73,Grace Lee,Finance,Pending,URGENT,Tools,2025-04-14,2026-02-10,2026-02-10,174603.94,201230.44,545,224.75,147,-2.2,user73@valid.com,4704785815,East,2025-10-14,See attachment,,Manager
+REC0074,Frank Green Task 74,Bob Jones,Sales,PENDING,Low,Clothing,2025-04-26,2025-06-17,2025-06-17,183463.87,491503.84,891,4850.93,85,1.1,user74@valid.com,8466111803,South,2025-12-21,,,
+REC0075,Jack Miller Task 75,David Black,Finance,In Progress,low,Electronics,2025-05-16,2025-10-24,2025-10-24,121318.1,292193.98,478,237.48,134,4.4,user75@valid.com,,West,2025-11-30,,,
+REC0076,Grace Lee Task 76,David Black,Finance,Done,High,Clothing,2025-08-30,2025-08-11,2025-08-11,185124.3,638622.69,877,2893.83,63,12.3,user76@valid.com,4333816842,Central,2025-09-14,See attachment,,
+REC0077,Alice Smith Task 77,Isla Scott,Sales,Blocked,URGENT,Electronics,2025-05-27,2025-07-14,2025-07-14,105283.49,90546.51,540,1675.86,279,6.2,user77@valid.com,1211722336,East,2025-08-14,,,
+REC0078,Alice Smith Task 78,Isla Scott,HR,Blocked,high,,2026-01-01,2026-02-04,,59236.74,103800.67,174,3783.02,119,-2.3,user78@valid.com,6063244930,Central,2025-12-14,See attachment,,
+REC0079,Bob Jones Task 79,Bob Jones,Sales,Blocked,low,Stationery,2026-03-22,2025-11-10,,143815.76,1628939.28,734,3850.87,110,7.2,user79@INVALID,4705150091,South,2026-01-12,,,
+REC0080,Carol White Task 80,Bob Jones,HR,Done,High,Tools,2025-03-19,2025-04-25,,58111.72,101212.99,500,2489.26,-19,7.2,user80@valid.com,,,2025-07-27,,,Manager
+REC0081,Isla Scott Task 81,David Black,Engineering,PENDING,Medium,Electronics,2025-11-22,2026-01-11,2026-01-11,55983.53,7195.21,864,-321.62,127,11.8,user81@valid.com,1210588114,West,2025-12-26,,,Auto
+REC0082,Carol White Task 82,Henry Wang,Operations,active,High,Tools,2025-05-27,2025-07-19,2025-07-19,157567.86,494976.46,829,-127.83,89,11.9,user82@INVALID,8986096303,East,2025-07-01,,,
+REC0083,Isla Scott Task 83,Bob Jones,,Completed,URGENT,Stationery,2026-02-26,2026-02-19,2026-02-19,114487.73,230463.73,628,-1165.63,13,7.3,user83@valid.com,7432749100,South,2025-11-28,See attachment,,
+REC0084,David Black Task 84,Jack Miller,Unknown,IN PROGRESS,High,Stationery,2025-08-01,2025-09-30,2025-09-30,159448.14,449827.49,207,-1229.63,400,8.8,user84@valid.com,,East,2025-07-11,,,
+REC0085,Alice Smith Task 85,Carol White,Finance,completed,high,Stationery,07-Dec-2025,2025-10-28,2025-10-28,123390.67,206911.22,475,3884.9,145,-2.3,user85@INVALID,9142951341,West,2025-08-28,See attachment,,
+REC0086,Alice Smith Task 86,David Black,Operations,In Progress,High,Clothing,"Dec 05, 2025",2025-04-10,2025-04-10,111257.85,12138.91,997,1563.82,116,11.8,user86@valid.com,3556329609,East,2025-10-17,See attachment,,
+REC0087,Eva Brown Task 87,David Black,Legal,PENDING,High,Stationery,2025-11-26,2025-12-23,2025-12-23,90655.31,246787.9,925,9.32,109,15.0,user87@valid.com,6111920251,West,2025-07-02,,,
+REC0088,Alice Smith Task 88,Henry Wang,Unknown,cancelled,High,Electronics,2025-07-06,2025-07-02,2025-07-02,41434.83,6385.31,858,2768.58,2,1.7,user88@valid.com,,,2025-10-19,,,
+REC0089,Frank Green Task 89,Henry Wang,Sales,DONE,Medium,Clothing,2025-12-19,2026-01-04,2026-01-04,55691.58,2973.85,627,2577.94,6,-0.9,user89@valid.com,2051515688,North,2025-10-19,See attachment,,
+REC0090,Alice Smith Task 90,Bob Jones,Unknown,active,High,,2026-03-13,2026-04-22,2026-04-22,180706.84,445690.21,902,2760.16,94,7.3,user90@valid.com,3291300350,West,2025-06-10,,,
+REC0091,David Black Task 91,Carol White,Legal,In Progress,URGENT,Clothing,2025-10-20,2025-11-28,2025-11-28,94373.9,219714.91,797,4234.35,63,4.1,user91@INVALID,6804394126,West,2025-12-30,,,Auto
+REC0092,Bob Jones Task 92,Frank Green,Sales,Completed,urgent,,2026-02-03,2026-03-06,2026-03-06,163601.8,236739.44,625,840.3,20,14.5,user92@valid.com,7833164976,West,2025-06-10,See attachment,,
+REC0093,Jack Miller Task 93,Henry Wang,Sales,Blocked,Low,Furniture,29-Jan-2026,2025-04-11,2025-04-11,148003.73,91260.43,968,1731.87,133,-2.8,user93@valid.com,6922377726,West,2026-02-24,,,Auto
+REC0094,Grace Lee Task 94,Jack Miller,,Done,Medium,Stationery,2026-01-10,2026-02-16,2026-02-16,106485.54,296052.52,685,1175.03,91,9.4,user94@valid.com,3502793324,Central,2025-07-09,,,
+REC0095,Alice Smith Task 95,Isla Scott,Operations,Pending,high,Tools,2025-09-19,2025-11-08,2025-11-08,193595.95,159396.08,709,2745.9,140,1.4,user95@valid.com,3341267390,,2025-12-29,,,
+REC0096,Carol White Task 96,Carol White,Engineering,ACTIVE,low,Electronics,2025-09-24,2025-10-27,,31276.32,1488272.19,663,1902.04,14,-5.0,user96@valid.com,6067191149,Central,2025-08-22,See attachment,,
+REC0097,Jack Miller Task 97,Henry Wang,Finance,cancelled,Low,,2026-03-19,2025-04-06,2026-01-25,121112.36,244311.88,24,4880.28,125,4.7,user97@valid.com,1343868435,,2025-07-01,See attachment,,Manager
+REC0098,Henry Wang Task 98,Bob Jones,Legal,active,Low,Electronics,2025-07-03,2025-08-30,2025-08-30,18145.05,32558.04,470,2656.81,64,3.4,user98@valid.com,2242140808,North,2025-10-23,See attachment,,
+REC0099,Alice Smith Task 99,Eva Brown,Engineering,active,URGENT,Furniture,2025-07-28,2026-02-25,2026-02-25,34231.31,9208.84,792,1028.17,-19,7.3,user99@valid.com,,,2026-01-09,See attachment,,
+REC0100,David Black Task 100,Henry Wang,HR,cancelled,high,Electronics,2025-12-28,2026-01-10,2026-01-10,156614.28,46264.66,138,2775.49,19,11.8,user100@valid.com,2645689727,,2025-08-14,See attachment,,
+REC0101,Bob Jones Task 101,Alice Smith,HR,Blocked,URGENT,,2026-02-28,2026-03-13,2026-03-13,151219.04,394912.59,760,4573.53,-58,2.6,user101@valid.com,9032781720,North,2025-10-31,See attachment,,
+REC0102,Isla Scott Task 102,Frank Green,Unknown,DONE,Low,Tools,2026-03-20,2025-09-18,2025-03-28,19924.18,6853.3,660,2712.97,98,10.5,user102@valid.com,6067703428,Central,2026-03-22,See attachment,,
+REC0103,Eva Brown Task 103,Eva Brown,Finance,active,High,Furniture,2026-03-19,2025-05-05,,70627.53,146868.89,905,4095.03,133,7.8,user103@valid.com,,Central,2026-01-20,,,
+REC0104,Bob Jones Task 104,Henry Wang,Legal,IN PROGRESS,low,Stationery,2025-12-23,2026-01-04,2026-01-04,59266.44,161949.08,273,3774.08,77,2.8,user104@valid.com,,East,2025-12-26,,,
+REC0105,Bob Jones Task 105,Carol White,Unknown,Done,urgent,Furniture,2025-09-07,2025-09-09,2025-09-09,129273.89,323689.04,95,-308.27,-2,6.4,user105@valid.com,9145458689,South,2026-03-27,See attachment,,
+REC0106,Isla Scott Task 106,Henry Wang,,IN PROGRESS,URGENT,Furniture,2025-10-10,2025-11-09,2025-11-09,115140.73,1332.84,967,3290.94,103,-2.6,user106@valid.com,6595603986,North,2026-02-09,,,
+REC0107,Carol White Task 107,Isla Scott,Engineering,in progress,low,Food,2025-08-04,2025-08-21,2025-08-21,129734.62,177135.31,99,2968.39,71,4.7,user107@valid.com,1813743830,North,2025-12-19,,,
+REC0108,Henry Wang Task 108,Alice Smith,Engineering,completed,High,Stationery,2025-06-24,2025-07-13,2025-07-13,100186.99,15013.11,111,664.23,147,99.0,user108@valid.com,3488270884,North,2026-03-09,See attachment,,
+REC0109,Carol White Task 109,Alice Smith,HR,active,Low,Furniture,2026-03-23,2025-11-06,2025-04-30,48915.17,29222.55,595,-148.23,7,-2.7,user109@valid.com,6165304376,East,2025-09-03,,,
+REC0110,Frank Green Task 110,Bob Jones,Sales,DONE,Medium,,2025-12-08,2025-11-23,2025-11-23,118820.51,153842.34,158,1912.64,128,-4.2,user110@INVALID,7925383538,South,2026-03-19,See attachment,,
+REC0111,Grace Lee Task 111,Henry Wang,HR,Done,Medium,Tools,2026-02-10,2026-04-06,2026-04-06,177439.57,255887.31,950,460.02,-11,6.9,user111@valid.com,9967982724,East,2025-09-30,,,
+REC0112,Isla Scott Task 112,Isla Scott,Finance,Blocked,high,Food,2025-06-29,2025-06-21,2025-06-21,123974.73,84056.91,805,320.7,101,5.0,user112@INVALID,9821981414,East,2025-11-02,,,
+REC0113,Isla Scott Task 113,Carol White,HR,Active,URGENT,Furniture,2026-03-05,2026-02-26,,148213.17,122060.87,445,2759.89,63,3.4,user113@valid.com,5767984371,South,2026-02-05,,,
+REC0114,Henry Wang Task 114,Alice Smith,Unknown,pending,Medium,,2025-12-05,2025-11-24,2025-11-24,94462.56,123481.25,458,3459.02,141,2.2,user114@valid.com,9727779832,Central,2026-02-25,,,Director
+REC0115,Eva Brown Task 115,Jack Miller,HR,PENDING,urgent,Food,2025-12-30,2026-01-22,,44360.79,133056.12,490,4242.09,35,6.8,user115@valid.com,,,2025-08-20,See attachment,,
+REC0116,Jack Miller Task 116,Carol White,Engineering,IN PROGRESS,High,Electronics,2026-03-23,2025-07-09,2025-06-12,178418.61,458030.38,506,-315.09,115,2.9,user116@valid.com,5715870675,West,2025-11-24,,,
+REC0117,Bob Jones Task 117,Alice Smith,,Completed,Medium,,2025-09-25,2025-10-12,2025-10-12,48192.95,126048.83,14,4870.31,98,10.4,user117@valid.com,3720442203,,2026-02-19,,,
+REC0118,Jack Miller Task 118,Isla Scott,Finance,ACTIVE,urgent,Stationery,2025-03-07,2025-03-21,2025-03-21,139761.97,26812.06,958,4505.02,73,12.8,user118@INVALID,3659157927,East,2025-09-21,,,
+REC0119,Frank Green Task 119,David Black,Sales,Cancelled,low,Food,2025-03-29,2025-04-04,2025-04-04,28111.96,74864.98,318,1439.91,48,5.1,user119@valid.com,,East,2025-10-02,,,
+REC0120,Isla Scott Task 120,Eva Brown,,In Progress,high,Furniture,2025-03-29,2025-05-16,2025-05-16,135822.5,420224.82,79,-59.06,25,0.8,user120@valid.com,,East,2026-01-29,See attachment,,Auto
+REC0121,Isla Scott Task 121,Carol White,,In Progress,URGENT,,2025-05-10,2025-04-22,2025-04-22,58987.3,4435.14,183,-153.78,39,11.7,user121@valid.com,7780484666,,2025-10-11,,,
+REC0122,Eva Brown Task 122,David Black,,In Progress,Low,Electronics,2026-03-23,2025-06-10,,-7794.5,34599.47,969,415.0,-89,9.2,user122@valid.com,1659212199,South,2026-01-27,,,
+REC0123,Isla Scott Task 123,Alice Smith,Operations,In Progress,Medium,Stationery,2025-11-14,2025-12-11,2025-12-11,37307.07,127371.18,536,1158.58,-14,3.1,user123@valid.com,,West,2025-10-15,,,Director
+REC0124,Jack Miller Task 124,Carol White,,completed,low,Furniture,2025-07-28,2025-08-14,2025-08-14,193936.31,611017.8,132,3229.05,9,1.2,user124@valid.com,7210405433,North,2025-10-11,,,Director
+REC0125,Henry Wang Task 125,Bob Jones,Unknown,Done,URGENT,Stationery,2025-12-17,2025-11-29,2025-11-29,17176.12,30752.91,47,4496.46,72,3.0,user125@valid.com,6953308368,North,2025-11-02,,,
+REC0126,Henry Wang Task 126,Grace Lee,,active,Medium,,2026-02-11,2025-12-09,2025-12-09,145706.74,211227.89,845,2729.49,2,-2.1,user126@valid.com,2440603960,Central,2025-12-03,,,
+REC0127,Jack Miller Task 127,Carol White,Finance,PENDING,high,,2025-12-28,2026-02-17,2026-02-17,92692.93,159158.36,832,4044.37,129,1.1,user127@valid.com,1010508398,East,2025-10-25,See attachment,,
+REC0128,Henry Wang Task 128,David Black,Engineering,Pending,high,Tools,2025-04-21,2025-05-07,2025-05-07,83722.78,284422.08,603,3600.61,128,4.6,user128@valid.com,,,2025-07-27,See attachment,,Auto
+REC0129,Alice Smith Task 129,Carol White,Operations,Blocked,low,Clothing,2026-03-19,2026-04-01,2026-04-01,32988.02,6106.38,359,1807.33,71,-4.0,user129@valid.com,9919902664,South,2025-12-24,See attachment,,
+REC0130,Eva Brown Task 130,Eva Brown,Operations,Pending,urgent,Stationery,2025-10-13,2025-11-02,2025-11-02,165450.99,7468.76,520,1047.8,104,3.2,user130@valid.com,,South,2026-01-07,,,
+REC0131,Henry Wang Task 131,Frank Green,Legal,In Progress,Medium,,2026-01-27,2026-01-23,2026-01-23,184720.25,386392.32,771,4835.61,24,9.2,user131@INVALID,1955019690,,2026-01-14,See attachment,,
+REC0132,Bob Jones Task 132,Bob Jones,Engineering,Cancelled,high,,2026-02-15,2026-03-21,,138318.22,52195.88,802,3128.84,131,-3.8,user132@INVALID,,North,2025-10-24,See attachment,,Manager
+REC0133,Frank Green Task 133,Alice Smith,Sales,pending,high,Tools,2025-05-31,2025-06-05,2025-06-05,-2997.7,45487.94,154,4203.26,136,-0.2,user133@valid.com,,Central,2026-03-20,,,
+REC0134,Bob Jones Task 134,David Black,,In Progress,low,Clothing,2025-03-06,2025-04-23,2025-04-23,1363.62,4571.01,175,4091.08,77,3.5,user134@valid.com,2349823507,West,2026-01-30,,,
+REC0135,Bob Jones Task 135,Frank Green,,Pending,URGENT,Tools,2025-10-31,2025-12-21,2025-12-21,144566.25,372490.91,693,4868.98,93,-0.5,user135@valid.com,2838081369,North,2025-07-27,See attachment,,
+REC0136,Grace Lee Task 136,Henry Wang,Sales,Pending,Medium,,2025-04-16,2025-05-28,2025-05-28,134583.05,278176.48,94,3577.88,23,-3.7,user136@valid.com,9549825267,North,2025-11-28,See attachment,,Auto
+REC0137,Grace Lee Task 137,Frank Green,,in progress,URGENT,Tools,2025-05-28,2025-06-11,,151382.44,240883.01,115,878.79,-43,-0.4,user137@valid.com,,,2026-02-28,See attachment,,
+REC0138,Frank Green Task 138,Carol White,Legal,Pending,high,Furniture,2025-12-26,2026-01-23,2026-01-23,121114.49,220406.72,494,3860.02,31,0.9,user138@valid.com,7624721270,Central,2025-06-21,,,
+REC0139,Grace Lee Task 139,Henry Wang,,active,High,Clothing,2025-09-12,2025-10-19,2025-10-19,63254.56,190476.08,300,-1976.64,22,4.8,user139@INVALID,8194175806,,2025-06-17,See attachment,,
+REC0140,Henry Wang Task 140,Jack Miller,Unknown,In Progress,high,Tools,16/03/2026,2025-06-28,2025-06-28,78581.27,7741.39,36,205.09,73,2.0,user140@valid.com,,,2025-10-04,,,Director
+REC0141,David Black Task 141,David Black,Legal,ACTIVE,low,Furniture,2025-09-29,2025-09-16,2025-09-16,132417.38,53052.96,163,-391.58,63,-4.3,user141@valid.com,7103889958,North,2025-07-30,See attachment,,Director
+REC0142,Bob Jones Task 142,David Black,Operations,ACTIVE,urgent,Stationery,2025-06-07,2025-11-13,2025-11-13,-28109.83,169577.96,982,1897.95,107,7.7,user142@valid.com,,Central,2025-12-08,,,
+REC0143,Bob Jones Task 143,Jack Miller,Sales,completed,Low,Furniture,2025-12-02,2026-01-30,2026-01-30,148706.16,276403.53,427,653.57,-1,8.0,user143@valid.com,7614024489,South,2025-08-27,,,
+REC0144,Isla Scott Task 144,Carol White,,Done,low,,2025-12-25,2025-12-07,2025-12-07,125754.87,280778.21,818,-1546.8,91,13.7,user144@valid.com,,South,2025-09-22,,,Director
+REC0145,Bob Jones Task 145,David Black,Unknown,DONE,high,Tools,2025-08-17,2025-09-18,2025-09-18,64071.31,57508.05,605,798.71,41,-2.7,user145@INVALID,,East,2025-08-02,,,
+REC0146,Alice Smith Task 146,Eva Brown,Legal,PENDING,low,Electronics,2025-12-14,2025-12-14,2025-12-14,54906.04,93364.8,10,-195.7,421,1.3,user146@valid.com,,West,2025-09-22,See attachment,,
+REC0147,Isla Scott Task 147,Bob Jones,Legal,Cancelled,High,Food,2026-03-23,2025-11-08,2026-01-25,22830.51,61783.2,310,1311.07,129,9.7,user147@valid.com,9312909606,South,2026-01-13,,,
+REC0148,Alice Smith Task 148,Henry Wang,Operations,Pending,Low,,2025-08-30,2025-09-11,2025-09-11,172648.54,838235.96,274,4336.88,17,2.3,user148@valid.com,9680447616,Central,2026-03-10,See attachment,,
+REC0149,Eva Brown Task 149,Frank Green,Sales,done,high,,2026-03-23,2025-11-05,2025-12-07,110769.22,352718.2,392,4601.29,45,1.0,user149@valid.com,2277421636,South,2025-08-15,See attachment,,
+REC0150,Grace Lee Task 150,Frank Green,Unknown,Pending,high,Clothing,2026-03-20,2025-11-27,2026-03-28,94482.71,167439.5,350,1814.79,120,9.8,user150@valid.com,,North,2025-12-23,See attachment,,
+REC0151,Jack Miller Task 151,Bob Jones,Sales,PENDING,Medium,Clothing,2025-12-15,2026-02-13,2026-02-13,-29157.38,147504.56,801,4666.8,432,4.6,user151@valid.com,,,2025-10-11,See attachment,,
+REC0152,Jack Miller Task 152,David Black,Engineering,Active,urgent,Food,2025-09-07,2025-10-05,2025-10-05,188979.05,644313.96,193,939.81,23,-4.0,user152@valid.com,1641029050,East,2025-12-30,See attachment,,Director
+REC0153,Henry Wang Task 153,Bob Jones,Finance,Done,Medium,Tools,2025-02-25,2025-04-04,2025-04-04,165537.86,286312.39,123,1872.2,32,7.0,user153@valid.com,,,2025-12-21,,,
+REC0154,Henry Wang Task 154,David Black,Operations,Blocked,High,Electronics,2025-10-30,2025-11-12,2025-11-12,47479.38,144814.59,987,3311.63,34,9.3,user154@valid.com,2100480553,North,2025-06-15,,,
+REC0155,Jack Miller Task 155,Alice Smith,Engineering,active,urgent,,2025-09-27,2026-01-24,2026-01-24,187894.73,259565.08,369,227.31,123,-4.2,user155@INVALID,,West,2025-10-08,See attachment,,
+REC0156,Bob Jones Task 156,Frank Green,Engineering,pending,URGENT,Tools,2025-06-29,2025-08-03,2025-08-03,28788.25,93326.6,279,4465.36,47,7.3,user156@valid.com,,East,2025-08-16,See attachment,,Manager
+REC0157,Carol White Task 157,Alice Smith,Finance,PENDING,High,,2025-06-16,2025-07-22,2025-07-22,11117.83,27470.71,436,138.13,106,-4.2,user157@valid.com,7378883336,West,2026-01-29,See attachment,,
+REC0158,Carol White Task 158,Isla Scott,Legal,Done,urgent,Electronics,2025-12-13,2025-12-29,2025-12-29,36540.67,72999.39,416,4562.27,43,10.4,user158@valid.com,5406473964,,2026-01-24,,,
+REC0159,Henry Wang Task 159,Henry Wang,Legal,Active,Low,Electronics,2026-01-08,2025-12-22,2025-12-22,16672.12,55487.08,322,4710.8,125,-2.4,user159@valid.com,6510245519,North,2026-02-19,,,
+REC0160,Grace Lee Task 160,Bob Jones,Engineering,Done,Medium,,2025-12-26,2026-01-05,2026-01-05,193027.34,192501.46,760,-1970.76,19,-2.6,user160@valid.com,5858839243,,2026-02-06,See attachment,,
+REC0161,Grace Lee Task 161,Bob Jones,Unknown,In Progress,urgent,Clothing,2025-07-27,2025-08-10,2025-08-10,112829.89,168236.12,31,-1793.52,98,8.5,user161@valid.com,9292154271,Central,2025-07-02,,,
+REC0162,Carol White Task 162,Eva Brown,Finance,cancelled,URGENT,Tools,2025-07-26,2025-08-13,2025-08-13,30147.0,58137.89,929,-251.98,7,5.2,user162@valid.com,8786023064,East,2025-11-17,See attachment,,
+REC0163,Carol White Task 163,Grace Lee,Engineering,ACTIVE,URGENT,Tools,2025-04-23,2025-06-01,2025-06-01,36320.66,92048.59,765,3186.43,139,11.2,user163@valid.com,4478949331,South,2025-12-23,,,Manager
+REC0164,Grace Lee Task 164,Bob Jones,Engineering,PENDING,low,,2026-03-24,2025-06-21,2025-10-04,4074.09,5776.33,663,4811.92,134,9.5,user164@valid.com,7943866175,,2025-09-06,See attachment,,
+REC0165,David Black Task 165,Alice Smith,Finance,Cancelled,low,Clothing,2025-12-20,2025-12-14,2025-12-14,163285.66,249053.03,631,4220.04,117,-1.2,user165@valid.com,7330734943,North,2026-01-27,,,Director
+REC0166,Jack Miller Task 166,David Black,Finance,Completed,urgent,,2025-07-29,2025-07-11,,172029.39,4741.13,635,4161.96,90,14.6,user166@valid.com,2248867120,West,2025-09-04,,,
+REC0167,Isla Scott Task 167,Alice Smith,Unknown,completed,urgent,Furniture,2026-03-18,2025-03-31,2025-07-30,143000.92,324476.38,900,2103.36,106,7.5,user167@valid.com,2873593613,South,2025-10-31,See attachment,,
+REC0168,Frank Green Task 168,Jack Miller,,pending,Low,,2025-12-05,2026-01-29,2026-01-29,181859.5,530262.77,679,3088.75,72,10.9,user168@valid.com,3670792703,East,2026-02-11,See attachment,,
+REC0169,Grace Lee Task 169,Henry Wang,Legal,done,Medium,Electronics,2025-05-21,2025-07-02,2025-07-02,20630.29,25906.56,257,1463.74,20,-1.5,user169@valid.com,4465246370,East,2025-08-19,,,
+REC0170,Alice Smith Task 170,Isla Scott,Legal,pending,high,Furniture,2025-11-15,2025-12-08,2025-12-08,157084.72,509459.1,438,3894.43,8,14.5,user170@valid.com,3415802569,Central,2026-02-02,,,
+REC0171,Henry Wang Task 171,Isla Scott,,Pending,Medium,Stationery,2025-09-23,2025-09-23,2025-09-23,145805.68,70308.03,858,610.4,86,10.4,user171@INVALID,7329335818,East,2025-07-12,,,
+REC0172,Carol White Task 172,Isla Scott,Unknown,done,Medium,,2025-09-24,2025-11-23,2025-11-23,133166.55,190772.08,459,4735.12,112,10.9,user172@valid.com,,South,2026-03-22,See attachment,,
+REC0173,Carol White Task 173,Grace Lee,Engineering,In Progress,high,Electronics,18-Nov-2025,2026-02-24,2026-02-24,80629.35,181023.38,914,2660.06,141,14.6,user173@valid.com,9472515108,West,2026-01-06,See attachment,,
+REC0174,Isla Scott Task 174,Jack Miller,HR,in progress,URGENT,Food,2025-10-02,2025-09-13,2025-09-13,165487.21,361632.4,623,3086.2,68,12.8,user174@valid.com,2295067571,North,2025-06-25,,,Auto
+REC0175,Isla Scott Task 175,Eva Brown,Operations,PENDING,High,Electronics,2025-11-02,2025-11-09,2025-11-09,19017.5,35938.59,254,827.37,57,-5.0,user175@valid.com,,North,2025-09-18,,,
+REC0176,Jack Miller Task 176,Alice Smith,,completed,Medium,Food,2025-03-05,2025-02-28,2025-02-28,90023.01,89651.6,793,3982.94,126,8.4,user176@valid.com,2063577070,East,2025-07-06,See attachment,,
+REC0177,Bob Jones Task 177,Bob Jones,Engineering,in progress,Medium,,2025-03-28,2026-02-09,2026-02-09,165773.31,45298.29,683,2394.41,130,6.2,user177@valid.com,7804532904,,2025-12-09,See attachment,,Director
+REC0178,Henry Wang Task 178,Henry Wang,HR,cancelled,high,Furniture,2026-01-03,2026-01-01,2026-01-01,101404.29,161639.79,23,3605.73,123,2.4,user178@valid.com,2755008946,North,2025-09-19,See attachment,,
+REC0179,Eva Brown Task 179,Eva Brown,,Active,high,Clothing,2025-09-18,2025-10-07,,198208.51,409039.9,39,4652.51,58,12.8,user179@valid.com,3099352779,North,2025-06-20,,,
+REC0180,Grace Lee Task 180,Henry Wang,HR,pending,urgent,,2025-06-11,2025-07-18,2025-07-18,180107.31,420599.67,142,4264.9,63,-3.2,user180@valid.com,2663162195,West,2025-10-05,,,
+REC0181,Jack Miller Task 181,Eva Brown,Sales,ACTIVE,Medium,Electronics,2026-02-10,2026-02-11,2026-02-11,141588.12,258559.48,758,2117.1,-16,-2.6,user181@valid.com,,North,2025-11-07,See attachment,,Auto
+REC0182,Jack Miller Task 182,Frank Green,Unknown,active,URGENT,Electronics,2025-08-12,2025-08-02,2025-08-02,161480.74,102019.98,14,4228.07,61,2.6,user182@INVALID,3326924276,East,2026-01-13,,,
+REC0183,Frank Green Task 183,Carol White,Engineering,active,Low,,2025-08-31,2025-09-01,,12253.29,6109.64,904,1283.2,76,13.8,user183@valid.com,,South,2025-11-26,,,
+REC0184,Grace Lee Task 184,Bob Jones,,Active,URGENT,Food,2026-02-24,2026-03-16,2026-03-16,93232.29,6076.87,557,4799.11,5,-0.1,user184@valid.com,7041927717,North,2025-07-14,,,
+REC0185,Isla Scott Task 185,Henry Wang,Engineering,Active,high,,2025-11-22,2026-01-09,2026-01-09,190546.22,413972.09,658,4846.45,-20,-3.8,user185@valid.com,,East,2025-09-14,See attachment,,Auto
+REC0186,Isla Scott Task 186,Jack Miller,Sales,Completed,High,,2025-11-03,2025-10-19,2025-10-19,-9361.55,95057.92,732,2560.63,51,12.6,user186@valid.com,8739773975,,2025-10-03,See attachment,,
+REC0187,Henry Wang Task 187,Jack Miller,Operations,Active,low,Clothing,2025-04-22,2025-05-13,2025-05-13,68655.15,492.0,477,-476.46,-18,8.5,user187@valid.com,8315616392,West,2025-06-25,,,Auto
+REC0188,Grace Lee Task 188,Jack Miller,Operations,in progress,Medium,Electronics,2025-08-12,2025-08-07,,70922.45,91963.88,187,1945.18,36,9.9,user188@valid.com,8340948569,South,2026-02-09,See attachment,,
+REC0189,Henry Wang Task 189,Jack Miller,Finance,Active,Medium,,2025-07-18,2025-08-13,,7840.81,1644262.37,502,2217.06,121,-1.1,user189@valid.com,1753890647,Central,2026-01-21,See attachment,,
+REC0190,Alice Smith Task 190,Isla Scott,Legal,Blocked,High,,2025-07-03,2025-07-18,2025-07-18,38774.38,127984.91,43,4196.23,62,3.7,user190@valid.com,,,2025-07-05,,,Auto
+REC0191,Grace Lee Task 191,Isla Scott,,completed,High,,2025-12-03,2025-11-19,2025-11-19,55947.64,16019.55,575,3942.2,37,14.6,user191@valid.com,,South,2025-12-17,,,
+REC0192,Alice Smith Task 192,Jack Miller,Operations,DONE,Medium,Furniture,2026-03-13,2026-04-23,2026-04-23,-33001.09,290860.78,842,-200.62,65,5.4,user192@valid.com,,Central,2025-08-15,See attachment,,
+REC0193,Bob Jones Task 193,Carol White,Engineering,Blocked,High,Tools,2026-02-24,2026-02-08,2026-02-08,75790.33,114552.27,94,3226.6,123,-4.0,user193@valid.com,2765695439,Central,2026-03-22,,,
+REC0194,Alice Smith Task 194,Henry Wang,Operations,Done,High,Furniture,2025-05-14,2025-05-06,,-7438.09,170398.11,597,3841.79,29,13.1,user194@INVALID,6821360946,West,2025-08-12,,,
+REC0195,Isla Scott Task 195,Frank Green,Legal,pending,Medium,,2026-01-21,2026-02-09,2026-02-09,117112.2,140552.34,367,4836.49,112,6.7,user195@valid.com,,Central,2025-06-14,See attachment,,
+REC0196,Frank Green Task 196,David Black,,Blocked,urgent,Stationery,2025-12-15,2025-12-20,2025-12-20,157160.13,311387.52,333,2888.57,87,1.6,user196@INVALID,4910752537,West,2025-12-05,See attachment,,Manager
+REC0197,Frank Green Task 197,Grace Lee,Finance,in progress,Medium,Electronics,2025-11-25,2026-01-05,2026-01-05,147049.94,37947.57,20,2550.8,16,0.8,user197@INVALID,8582905353,North,2026-03-12,,,
+REC0198,Isla Scott Task 198,David Black,HR,Done,High,Clothing,2025-11-13,2025-11-15,2025-11-15,68293.59,217670.2,11,4072.95,15,2.6,user198@valid.com,,South,2025-10-22,,,
+REC0199,Jack Miller Task 199,Grace Lee,Sales,Pending,Medium,Clothing,2025-12-30,2026-02-15,2026-02-15,195431.82,131112.18,377,3318.95,61,7.0,user199@valid.com,,North,2025-12-21,See attachment,,
+REC0200,Eva Brown Task 200,Carol White,,Done,low,Furniture,2025-11-21,2025-11-07,2025-11-07,126077.1,349043.22,619,-143.2,110,2.8,user200@valid.com,6902427921,Central,2025-08-02,,,Director
+REC0001,Isla Scott Task 1,Alice Smith,Engineering,Cancelled,Medium,Clothing,2025-12-12,2025-12-26,2025-12-26,130491.67,3865.56,248,2845.89,58,9.3,user1@valid.com,,West,2025-09-30,,,
+REC0001,Isla Scott Task 1,Alice Smith,Engineering,Cancelled,Medium,Clothing,2025-12-12,2025-12-26,2025-12-26,130491.67,3865.56,248,2845.89,58,9.3,user1@valid.com,,West,2025-09-30,,,
+REC0001,Isla Scott Task 1,Alice Smith,Engineering,Cancelled,Medium,Clothing,2025-12-12,2025-12-26,2025-12-26,130491.67,3865.56,248,2845.89,58,9.3,user1@valid.com,,West,2025-09-30,,,
+REC0010,Grace Lee Task 10,Eva Brown,HR,active,urgent,,2025-07-03,2025-07-08,2025-07-08,71905.41,173199.55,482,1318.32,-20,-4.7,user10@INVALID,,Central,2025-07-18,,,
+REC0010,Grace Lee Task 10,Eva Brown,HR,active,urgent,,2025-07-03,2025-07-08,2025-07-08,71905.41,173199.55,482,1318.32,-20,-4.7,user10@INVALID,,Central,2025-07-18,,,Auto
+REC0010,Grace Lee Task 10,Eva Brown,HR,active,urgent,,2025-07-03,2025-07-08,2025-07-08,71905.41,173199.55,482,1318.32,-20,-4.7,user10@INVALID,,Central,2025-07-18,,,Auto
+REC0025,Bob Jones Task 25,Carol White,Engineering,Blocked,low,Stationery,2025-06-25,2025-07-30,,129488.95,33196.84,172,3868.18,122,-3.6,user25@valid.com,7045736747,West,2025-09-01,,,
+REC0025,Bob Jones Task 25,Carol White,Engineering,Blocked,low,Stationery,2025-06-25,2025-07-30,,129488.95,33196.84,172,3868.18,122,-3.6,user25@valid.com,7045736747,West,2025-09-01,,,Auto
+REC0025,Bob Jones Task 25,Carol White,Engineering,Blocked,low,Stationery,2025-06-25,2025-07-30,,129488.95,33196.84,172,3868.18,122,-3.6,user25@valid.com,7045736747,West,2025-09-01,,,
+REC0051,Grace Lee Task 51,Eva Brown,Finance,done,low,Tools,2025-05-15,2025-05-14,2025-05-14,17320.1,7663.12,529,4111.85,-13,-4.3,user51@valid.com,9006854740,West,2025-06-24,See attachment,,
+REC0051,Grace Lee Task 51,Eva Brown,Finance,done,low,Tools,2025-05-15,2025-05-14,2025-05-14,17320.1,7663.12,529,4111.85,-13,-4.3,user51@valid.com,9006854740,West,2025-06-24,See attachment,,
+REC0051,Grace Lee Task 51,Eva Brown,Finance,done,low,Tools,2025-05-15,2025-05-14,2025-05-14,17320.1,7663.12,529,4111.85,-13,-4.3,user51@valid.com,9006854740,West,2025-06-24,See attachment,,
+REC0100,David Black Task 100,Henry Wang,HR,cancelled,high,Electronics,2025-12-28,2026-01-10,2026-01-10,156614.28,46264.66,138,2775.49,19,11.8,user100@valid.com,2645689727,,2025-08-14,See attachment,,Director
+REC0100,David Black Task 100,Henry Wang,HR,cancelled,high,Electronics,2025-12-28,2026-01-10,2026-01-10,156614.28,46264.66,138,2775.49,19,11.8,user100@valid.com,2645689727,,2025-08-14,See attachment,,Director
+REC0100,David Black Task 100,Henry Wang,HR,cancelled,high,Electronics,2025-12-28,2026-01-10,2026-01-10,156614.28,46264.66,138,2775.49,19,11.8,user100@valid.com,2645689727,,2025-08-14,See attachment,,

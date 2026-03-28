@@ -1,0 +1,48 @@
+sku,product_name,category,quantity_on_hand,reorder_level,unit_cost,selling_price,supplier_name,last_restocked,expiry_date,location,barcode,last_audit_date
+SKU-57467,Product 1 - Food,Tools,,,745.07,393.66,SupplierB,2025-10-17,,Store Floor,221814525,
+SKU-34385,Product 2 - Food,Tools,118.0,,1409.56,3063.27,,,2026-03-01,Warehouse A,865975088,2025-10-01
+SKU-99381,Product 3 - Clothing,Stationery,33.0,47.0,1703.47,4637.35,SupplierB,02/11/2026,,Warehouse B,354193540,2025-09-15
+SKU-57303,Product 4 - Tools,Tools,411.0,26.0,500.0,50.0,,2025-10-23,2026-04-04,Warehouse B,789705810,
+SKU-71057,Product 5 - Stationery,Tools,449.0,80.0,368.02,2168.77,SupplierA,2025-12-18,,Warehouse B,,2025-11-05
+SKU-55353,Product 6 - Tools,Clothing,99999.0,,552.53,3076.0,SupplierA,2025-06-22,2026-12-20,Warehouse B,,2026-02-10
+SKU-54252,Product 7 - Tools,Electronics,14.0,,1543.19,1061.93,,2025-04-12,,,424371087,2026-03-03
+SKU-63227,Product 8 - Clothing,Food,118.0,,971.08,3037.23,SupplierC,2025-09-07,2026-02-08,Cold Storage,,2026-01-30
+SKU-23917,Product 9 - Clothing,Furniture,136.0,28.0,,1926.91,,2025-06-17,2026-12-18,Store Floor,,
+SKU-77466,Product 10 - Food,Food,254.0,,500.0,50.0,SupplierC,,,,802506364,2025-11-21
+SKU-80345,Product 11 - Electronics,Electronics,451.0,56.0,735.05,2855.71,SupplierB,06-Mar-2026,,,690404558,
+SKU-91689,Product 12 - Stationery,Tools,499.0,,1973.64,1834.38,SupplierB,,2026-11-09,Warehouse A,,
+SKU-53652,Product 13 - Food,Tools,310.0,27.0,1228.07,4953.17,SupplierC,2025-12-12,2026-11-25,Cold Storage,421897671,2025-09-13
+SKU-58281,Product 14 - Clothing,Stationery,87.0,98.0,1195.83,3281.4,,2025-04-23,2026-01-14,,765436255,2025-12-15
+SKU-29369,Product 15 - Stationery,Furniture,,24.0,884.87,2070.67,SupplierB,2025-11-24,2027-03-09,Warehouse A,656931857,
+SKU-52604,Product 16 - Stationery,Food,160.0,68.0,500.0,50.0,SupplierC,2025-07-04,2026-07-18,,419561201,2026-03-08
+SKU-37168,Product 17 - Stationery,Stationery,245.0,45.0,1149.09,4479.84,,2025-06-10,,Store Floor,184857208,
+SKU-67983,Product 18 - Stationery,Clothing,109.0,,1866.38,694.99,,2025-07-28,,,350006353,
+SKU-64172,Product 19 - Clothing,Stationery,348.0,10.0,1955.93,3267.94,,2025-07-08,2026-07-23,Store Floor,163525343,2025-10-01
+SKU-95498,Product 20 - Tools,Furniture,370.0,14.0,354.25,887.19,SupplierA,2025-10-17,2026-06-01,Store Floor,109950544,
+SKU-89007,Product 21 - Electronics,Clothing,-150.0,73.0,272.73,1371.46,SupplierA,2025-11-17,2027-02-28,Warehouse B,,
+SKU-48669,Product 22 - Tools,Stationery,89.0,91.0,1654.84,442.82,SupplierA,,,Store Floor,107333788,
+SKU-40870,Product 23 - Food,Clothing,154.0,83.0,,3466.92,SupplierA,2025-11-21,,Cold Storage,855438611,2026-03-04
+SKU-25389,Product 24 - Stationery,Clothing,113.0,,,3741.2,,2026-01-03,2027-03-20,,986485022,
+SKU-42435,Product 25 - Stationery,Tools,41.0,77.0,160.81,318.17,,2025-07-09,2026-05-13,Warehouse B,658712474,2026-03-02
+SKU-36922,Product 26 - Stationery,Tools,460.0,17.0,1028.93,298.11,,2025-09-01,2026-09-16,Store Floor,900801470,
+SKU-19572,Product 27 - Electronics,Food,32.0,17.0,142.69,168.36,,,,Cold Storage,510684364,2025-12-14
+SKU-59236,Product 28 - Electronics,Stationery,447.0,93.0,241.67,1971.36,SupplierB,2025-07-20,2027-03-20,Warehouse A,597146648,2026-01-26
+SKU-65591,Product 29 - Tools,Food,126.0,29.0,500.0,50.0,,2025-04-05,,Warehouse A,,
+SKU-88352,Product 30 - Stationery,Stationery,125.0,61.0,1081.82,3882.56,SupplierB,2025-08-23,,,742009209,2025-11-30
+SKU-41051,Product 31 - Clothing,Furniture,266.0,,126.61,4399.77,SupplierB,2025-11-01,2026-03-22,Store Floor,820848547,2026-01-21
+SKU-51777,Product 32 - Stationery,Food,153.0,78.0,1699.44,3540.81,,2026-01-09,,Cold Storage,243980993,2025-11-13
+SKU-36651,Product 33 - Clothing,Stationery,,57.0,,960.5,SupplierC,2025-04-17,2026-06-02,,700061135,
+SKU-37379,Product 34 - Clothing,Clothing,7.0,,1484.24,3774.11,SupplierB,2025-07-10,,Warehouse B,932701695,
+SKU-71112,Product 35 - Tools,Stationery,133.0,73.0,1606.62,3810.53,SupplierC,2025-10-03,,Warehouse A,337591250,2025-09-13
+SKU-44180,Product 36 - Tools,Tools,213.0,35.0,762.78,2501.51,SupplierC,,2027-03-03,Cold Storage,886808192,2025-10-22
+SKU-28344,Product 37 - Stationery,Tools,469.0,92.0,1050.27,380.91,SupplierA,2025-10-25,,Warehouse B,,
+SKU-38668,Product 38 - Tools,Food,316.0,88.0,1320.27,,,2025-04-03,,Store Floor,407829477,
+SKU-98346,Product 39 - Food,Furniture,49.0,40.0,1055.28,1343.95,,,2026-10-19,,848651792,
+SKU-99658,Product 40 - Electronics,Stationery,332.0,21.0,757.45,3187.37,SupplierB,,2027-01-22,Store Floor,202393989,2025-09-19
+SKU-40115,Product 41 - Furniture,Stationery,243.0,19.0,564.34,3293.97,SupplierB,2025-09-05,,Warehouse B,907727084,2025-12-19
+SKU-20084,Product 42 - Clothing,Furniture,290.0,59.0,1083.42,3701.33,SupplierA,2025-09-21,,Cold Storage,181623972,
+SKU-90460,Product 43 - Tools,Food,167.0,,1985.21,1785.5,,2026-01-21,2026-04-10,,364623437,2025-09-30
+SKU-45123,Product 44 - Furniture,Food,324.0,,724.6,,SupplierC,2025-08-13,,Warehouse A,,2026-01-29
+SKU-77166,Product 45 - Food,Electronics,,21.0,1569.96,71.58,,2025-05-10,2026-12-09,Warehouse B,282088279,2025-10-22
+SKU-57467,Product 1 - Food,Tools,,,745.07,393.66,SupplierB,2025-10-17,,Store Floor,221814525,
+SKU-53652,Product 13 - Food,Tools,310.0,27.0,1228.07,4953.17,SupplierC,2025-12-12,2026-11-25,Cold Storage,421897671,2025-09-13

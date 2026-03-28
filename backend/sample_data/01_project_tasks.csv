@@ -1,0 +1,43 @@
+task_id,task_name,assignee,department,status,priority,start_date,due_date,budget,actual_cost,completion_pct,updated_at,notes
+T001,Task 1 - Fix module 1,Bob Singh,Marketing,In Progress,Low,2026-02-11,2026-02-17,2434.93,10576.81,35,2026-03-19,On track
+T002,Task 2 - Build module 2,Alice Kumar,Marketing,Blocked,High,2026-03-18,2026-04-08,8074.97,1150.27,4,2026-03-24,Waiting for dependency
+T003,Task 3 - Fix module 3,David Rao,DevOps,In Review,Medium,2026-02-06,2026-03-01,12332.03,885.78,53,2026-03-25,
+T004,Task 4 - Fix module 4,Bob Singh,Design,Pending,High,2026-02-07,2026-02-23,2298.44,2076.66,35,2026-03-22,On track
+T005,Task 5 - Deploy module 5,Alice Kumar,QA,In Progress,High,2026-02-13,2026-02-24,8728.57,11748.14,58,2026-03-18,On track
+T006,Task 6 - Review module 6,Alice Kumar,Engineering,In Review,Low,2026-01-27,2026-02-10,4190.58,4619.92,24,2026-03-26,On track
+T007,Task 7 - Design module 7,David Rao,Design,In Progress,High,2026-01-28,2026-02-07,6182.53,3565.49,48,2026-03-23,On track
+T008,Task 8 - Review module 8,Bob Singh,DevOps,In Progress,Low,2026-02-07,2026-03-03,4427.35,6901.83,77,2026-03-23,On track
+T009,Task 9 - Review module 9,Carol Das,Engineering,In Review,High,2026-02-11,2026-03-08,12505.24,11426.6,28,2026-03-21,On track
+T010,Task 10 - Deploy module 10,Carol Das,Marketing,Done,Low,2026-03-06,2026-03-11,7989.24,12477.82,100,2026-03-20,On track
+T011,Task 11 - Fix module 11,Eva Nair,DevOps,Done,Medium,2026-03-18,2025-12-28,11458.19,6455.33,100,2026-03-18,On track
+T012,Task 12 - Fix module 12,Eva Nair,QA,Done,High,2026-02-26,2026-03-12,11580.95,12166.56,100,2026-03-25,On track
+T013,Task 13 - Build module 13,David Rao,QA,Blocked,Low,2026-02-11,2026-02-19,14945.7,7784.31,76,2026-03-19,
+T014,Task 14 - Deploy module 14,Carol Das,Design,In Progress,High,2026-01-27,2026-01-30,5109.0,2887.68,87,2026-03-27,On track
+T015,Task 15 - Fix module 15,Eva Nair,Engineering,Pending,Low,2026-02-05,2026-03-03,5178.23,9234.13,64,2026-03-18,On track
+T016,Task 16 - Deploy module 16,Eva Nair,Engineering,Pending,Low,2026-03-11,2026-03-18,5538.18,1057.09,20,2026-03-22,On track
+T017,Task 17 - Build module 17,Bob Singh,DevOps,Pending,High,2026-01-29,2026-02-26,2199.15,7215.07,30,2026-03-26,On track
+T018,Task 18 - Fix module 18,David Rao,DevOps,Done,High,2026-02-03,2026-02-23,4710.79,12316.12,100,2026-03-21,On track
+T019,Task 19 - Review module 19,Carol Das,QA,Done,Low,2026-03-10,2026-03-30,10098.29,6582.92,100,2026-03-19,On track
+T020,Task 20 - Fix module 20,Alice Kumar,Design,Done,High,2026-02-23,2026-03-01,9236.32,3837.51,100,2026-03-24,On track
+T021,Task 21 - Build module 21,Alice Kumar,Design,In Progress,High,2026-03-23,2026-03-28,8198.19,4475.9,29,2026-03-20,On track
+T022,Task 22 - Review module 22,Eva Nair,DevOps,Done,Medium,2026-03-10,2026-03-30,4401.96,7043.24,100,2026-03-21,On track
+T023,Task 23 - Test module 23,Carol Das,QA,In Progress,Medium,2026-03-11,2026-03-17,7538.35,10423.8,84,2026-03-26,
+T024,Task 24 - Fix module 24,Bob Singh,Marketing,Pending,Low,2026-03-20,2026-04-04,7280.59,6368.84,13,2026-03-23,On track
+T025,Task 25 - Deploy module 25,Alice Kumar,Engineering,In Progress,Low,2026-02-22,2026-03-04,14989.95,11835.56,56,2026-03-26,On track
+T026,Task 26 - Fix module 26,David Rao,QA,Done,Medium,2026-02-03,2026-03-05,3992.46,6093.73,100,2026-03-27,On track
+T027,Task 27 - Design module 27,David Rao,Design,In Progress,Medium,2026-03-13,2026-03-28,10752.28,10442.67,49,2026-03-19,On track
+T028,Task 28 - Fix module 28,Carol Das,Marketing,Blocked,High,2026-02-09,2026-03-06,9108.52,7956.98,19,2026-03-22,Waiting for dependency
+T029,Task 29 - Deploy module 29,Eva Nair,Marketing,In Review,High,2026-03-20,2026-03-24,14450.9,1857.47,61,2026-03-25,On track
+T030,Task 30 - Fix module 30,David Rao,Engineering,In Progress,Low,2026-03-19,2026-04-10,4447.01,8647.65,86,2026-03-18,On track
+T031,Task 31 - Deploy module 31,Carol Das,Design,In Review,High,2026-03-18,2026-04-03,10376.16,4947.23,72,2026-03-23,On track
+T032,Task 32 - Design module 32,Alice Kumar,Engineering,Pending,Medium,2026-02-26,2026-03-05,9696.23,8231.52,58,2026-03-26,On track
+T033,Task 33 - Deploy module 33,Carol Das,Marketing,Done,Medium,2026-03-19,2026-04-08,13332.1,12406.37,100,2026-03-22,On track
+T034,Task 34 - Review module 34,Carol Das,DevOps,Blocked,Low,2026-03-05,2026-03-13,8405.17,9615.79,69,2026-03-19,Waiting for dependency
+T035,Task 35 - Design module 35,Alice Kumar,Engineering,In Progress,Low,2026-03-04,2026-03-28,8745.13,4395.0,17,2026-03-18,On track
+T036,Task 36 - Review module 36,Carol Das,DevOps,Pending,Medium,2026-03-10,2026-04-04,4515.7,12787.7,26,2026-03-27,On track
+T037,Task 37 - Build module 37,Alice Kumar,Design,Blocked,High,2026-03-18,2026-04-10,9919.59,4257.81,35,2026-03-20,Waiting for dependency
+T038,Task 38 - Build module 38,Alice Kumar,Engineering,Blocked,Low,2026-02-16,2026-03-13,13655.0,8001.79,71,2026-03-22,Waiting for dependency
+T039,Task 39 - Test module 39,Bob Singh,Engineering,Done,Medium,2026-02-14,2026-03-06,6105.12,13116.76,100,2026-03-27,On track
+T040,Task 40 - Review module 40,Alice Kumar,Design,Done,Low,2026-03-01,2026-03-10,13377.89,6164.18,100,2026-03-18,On track
+T001,Task 1 - Fix module 1,Bob Singh,Marketing,In Progress,Low,2026-02-11,2026-02-17,2434.93,10576.81,35,2026-03-19,On track
+T006,Task 6 - Review module 6,Alice Kumar,Engineering,In Review,Low,2026-01-27,2026-02-10,4190.58,4619.92,24,2026-03-26,On track
