@@ -6,5 +6,6 @@ services:
     env_file: ./backend/.env
   frontend:
     build: ./frontend
-    ports: ["5173:5173"]
+    ports: ["80:80"]
     depends_on: [backend]
+    env_file: ./frontend/.env
