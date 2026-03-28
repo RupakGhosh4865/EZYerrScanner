@@ -1,0 +1,58 @@
+task_id,task_name,assignee,status,priority,start_date,due_date,end_date,budget,actual_cost,client_feedback,updated_at,project_code,department,completion_pct
+TSK-101,Project Task 1,User 1,Completed,Low,2026-01-27,2026-04-27,,5100,4090,,2026-03-28,PRJ-1,Engineering,50.0
+TSK-102,Project Task 2,John Doe,In Progress,Medium,2026-01-27,2026-04-27,,5200,4180,,2026-03-28,PRJ-2,Engineering,50.0
+TSK-103,Project Task 3,Jane Smith,Completed,Low,2026-01-27,2026-04-27,,5300,4270,,2026-03-28,PRJ-3,Engineering,50.0
+TSK-104,Project Task 4,Alice,In Progress,Low,2026-01-27,2026-04-27,,5400,4360,,2026-03-28,PRJ-4,Engineering,50.0
+TSK-105,Project Task 5,User 5,Completed,Low,2026-01-27,2026-04-27,,5500,4450,,2026-03-28,PRJ-0,Engineering,50.0
+TSK-106,Project Task 6,User 6,Done,Low,2026-01-27,2026-04-27,,5600,4540,,2026-03-28,PRJ-1,Engineering,50.0
+TSK-107,Project Task 7,User 7,done,Medium,2026-01-27,2026-04-27,,5700,4630,,2026-03-28,PRJ-2,Engineering,50.0
+TSK-108,Project Task 8,User 8,DONE,Medium,2026-01-27,2026-04-27,,5800,4720,,2026-03-28,PRJ-3,Engineering,50.0
+TSK-109,Project Task 9,User 9,Completed,High,2026-01-27,2026-04-27,,5900,4810,,2026-03-28,PRJ-4,Engineering,50.0
+TSK-110,Project Task 10,User 0,complete,Medium,2026-01-27,2026-04-27,,6000,4900,,2026-03-28,PRJ-0,Engineering,50.0
+TSK-111,Project Task 11,User 1,Completed,Low,2026-01-27,2025-12-28,,6100,4990,,2026-03-28,PRJ-1,Engineering,50.0
+TSK-112,Project Task 12,User 2,In Progress,Medium,2026-01-27,2025-12-28,,6200,5080,,2026-03-28,PRJ-2,Engineering,50.0
+TSK-113,Project Task 13,User 3,Completed,Medium,2026-01-27,2025-12-28,,6300,5170,,2026-03-28,PRJ-3,Engineering,50.0
+TSK-114,Project Task 14,User 4,In Progress,High,2026-01-27,2025-12-28,,6400,5260,,2026-03-28,PRJ-4,Engineering,50.0
+TSK-115,Project Task 15,User 5,Completed,High,2026-01-27,2025-12-28,,6500,5350,,2026-03-28,PRJ-0,Engineering,50.0
+TSK-116,Project Task 16,User 6,In Progress,High,2026-01-27,2026-04-27,,1000,3500,,2026-03-28,PRJ-1,Engineering,50.0
+TSK-117,Project Task 17,User 7,Completed,High,2026-01-27,2026-04-27,,2000,7000,,2026-03-28,PRJ-2,Engineering,50.0
+TSK-118,Project Task 18,User 8,In Progress,Low,2026-01-27,2026-04-27,,6800,5620,,2026-03-28,PRJ-3,Engineering,50.0
+TSK-119,Project Task 19,User 9,Completed,High,01/27/2026,2026-04-27,,6900,5710,,2026-03-28,PRJ-4,Engineering,50.0
+TSK-120,Project Task 20,User 0,In Progress,Medium,01/27/2026,2026-04-27,,7000,5800,,2026-03-28,PRJ-0,Engineering,50.0
+TSK-121,Project Task 21,User 1,Completed,Medium,01/27/2026,2026-04-27,,7100,5890,,2026-03-28,PRJ-1,Engineering,
+TSK-122,Project Task 22,User 2,In Progress,Medium,01/27/2026,2026-04-27,,7200,5980,,2026-03-28,PRJ-2,Engineering,
+TSK-123,Project Task 23,User 3,Completed,Medium,01/27/2026,2026-04-27,,7300,6070,,2026-03-28,PRJ-3,Engineering,
+TSK-124,Project Task 24,User 4,In Progress,Medium,2026-01-27,2026-04-27,,7400,6160,,2026-03-28,PRJ-4,Engineering,
+TSK-125,Project Task 25,User 5,Completed,Low,2026-01-27,2026-04-27,,7500,6250,,2026-03-28,PRJ-0,Engineering,
+TSK-126,Project Task 26,User 6,In Progress,High,2026-01-27,2026-02-06,,7600,6340,,2026-03-28,PRJ-1,Engineering,
+TSK-127,Project Task 27,User 7,In Progress,High,2026-01-27,2026-02-06,,7700,6430,,2026-03-28,PRJ-2,Engineering,
+TSK-128,Project Task 28,User 8,In Progress,Medium,2026-01-27,2026-02-06,,7800,6520,,2026-03-28,PRJ-3,Engineering,
+TSK-129,Project Task 29,User 9,In Progress,High,2026-01-27,2026-02-06,,7900,6610,,2026-03-28,PRJ-4,Engineering,
+TSK-130,Project Task 30,User 0,In Progress,Low,2026-01-27,2026-02-06,,8000,6700,,2026-03-28,PRJ-0,Engineering,
+TSK-131,Project Task 31,User 1,In Progress,Medium,2026-01-27,2026-02-06,,8100,6790,,2026-03-28,PRJ-1,Engineering,
+TSK-132,Project Task 32,User 2,In Progress,High,2026-01-27,2026-04-27,,8200,6880,,2026-03-28,PRJ-2,Engineering,
+TSK-133,Project Task 33,User 3,Completed,Low,2026-01-27,2026-04-27,,8300,6970,,2026-03-28,PRJ-3,Engineering,
+TSK-134,Project Task 34,User 4,In Progress,High,2026-01-27,2026-04-27,,8400,7060,,2026-03-28,PRJ-4,Engineering,
+TSK-135,Project Task 35,User 5,Completed,High,2026-01-27,2026-04-27,,8500,7150,,2026-03-28,PRJ-0,Engineering,
+TSK-136,Project Task 36,User 6,In Progress,Medium,2026-01-27,2026-04-27,,8600,7240,Looks good 36,2026-03-28,PRJ-1,Engineering,50.0
+TSK-137,Project Task 37,User 7,Completed,Medium,2026-01-27,2026-04-27,,8700,7330,Needs changes,2026-03-28,PRJ-2,Engineering,50.0
+TSK-138,Project Task 38,User 8,In Progress,High,2026-01-27,2026-04-27,,8800,7420,Needs changes,2026-03-28,PRJ-3,Engineering,50.0
+TSK-139,Project Task 39,User 9,Completed,Low,2026-01-27,2026-04-27,,8900,7510,Looks good 39,2026-03-28,PRJ-4,Engineering,50.0
+TSK-140,Project Task 40,User 0,In Progress,Low,2026-01-27,2026-04-27,,9000,7600,Needs changes,2026-03-28,PRJ-0,Engineering,50.0
+TSK-141,Project Task 41,User 1,Completed,Medium,2026-01-27,2026-04-27,,-1000,7690,Needs changes,2026-03-28,PRJ-1,Engineering,50.0
+TSK-142,Project Task 42,User 2,In Progress,Medium,2026-01-27,2026-04-27,,-1000,7780,Looks good 42,2026-03-28,PRJ-2,Engineering,50.0
+TSK-143,Project Task 43,User 3,Completed,High,2026-01-27,2026-04-27,,-1000,7870,Needs changes,2026-03-28,PRJ-3,Engineering,50.0
+TSK-144,Project Task 44,User 4,In Progress,Medium,2026-01-27,2026-04-27,,9400,7960,Needs changes,2026-03-28,PRJ-4,Engineering,50.0
+TSK-145,Project Task 45,User 5,Completed,High,2026-01-27,2026-04-27,,9500,8050,Looks good 45,2026-03-28,PRJ-0,Engineering,50.0
+TSK-146,Project Task 46,User 6,In Progress,Low,2026-01-27,2026-04-27,,9600,8140,Needs changes,2026-03-28,PRJ-1,Engineering,150.0
+TSK-147,Project Task 47,User 7,Completed,High,2026-01-27,2026-04-27,,9700,8230,Needs changes,2026-03-28,PRJ-2,Engineering,150.0
+TSK-148,Project Task 48,User 8,In Progress,Low,2026-01-27,2026-04-27,,9800,8320,Looks good 48,2026-03-28,PRJ-3,Engineering,150.0
+TSK-149,Project Task 49,User 9,Completed,Low,2026-01-27,2026-04-27,,9900,8410,Needs changes,2026-03-28,PRJ-4,Engineering,150.0
+TSK-150,Project Task 50,User 0,In Progress,Low,2026-01-27,2026-04-27,,10000,8500,Needs changes,2026-03-28,PRJ-0,Engineering,50.0
+TSK-101,Project Task 1,User 1,Completed,Low,2026-01-27,2026-04-27,,5100,4090,Needs changes,2026-03-28,PRJ-1,Engineering,50.0
+TSK-101,Project Task 1,User 1,Completed,Low,2026-01-27,2026-04-27,,5100,4090,Needs changes,2026-03-28,PRJ-1,Engineering,50.0
+TSK-101,Project Task 1,User 1,Completed,Low,2026-01-27,2026-04-27,,5100,4090,Needs changes,2026-03-28,PRJ-1,Engineering,50.0
+TSK-101,Project Task 1,User 1,Completed,Low,2026-01-27,2026-04-27,,5100,4090,Needs changes,2026-03-28,PRJ-1,Engineering,50.0
+TSK-999,Project Task 2,Jon Doe,In Progress,Medium,2026-01-27,2026-04-27,,5200,4180,Needs changes,2026-03-28,PRJ-2,Engineering,50.0
+TSK-998,Project Task 3,Jane Smithe,Completed,Low,2026-01-27,2026-04-27,,5300,4270,Looks good 3,2026-03-28,PRJ-3,Engineering,50.0
+TSK-997,Project Task 4,Alic,In Progress,Low,2026-01-27,2026-04-27,,5400,4360,Needs changes,2026-03-28,PRJ-4,Engineering,50.0
