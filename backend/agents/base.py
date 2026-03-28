@@ -2,9 +2,9 @@ import os
 import uuid
 import pandas as pd
 from abc import ABC, abstractmethod
-from typing import List
+from typing import List, Any
 from langchain_groq import ChatGroq
-from ..graph.state import GraphState, Issue
+from graph.state import GraphState, Issue
 
 class BaseAgent(ABC):
     @property
@@ -24,7 +24,11 @@ class BaseAgent(ABC):
     def analyze(self, state: GraphState) -> List[Issue]:
         pass
 
-    def _create_issue(self, title: str, description: str, severity: str, rows: List[int], cols: List[str], fix: str, count: int, confidence: float) -> Issue:
+    def _create_issue(self, title: str, description: str, severity: str, rows: List[int], cols: List[str], fix: Any, count: int, confidence: float) -> Issue:
+        # Handle cases where Gemini sends a list for suggested_fix
+        if isinstance(fix, list):
+            fix = ". ".join(str(f) for f in fix)
+            
         return {
             "id": str(uuid.uuid4()),
             "agent": self.agent_name,

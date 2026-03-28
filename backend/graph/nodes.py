@@ -1,14 +1,14 @@
 import time
-from .state import GraphState, AgentStatus
-from ..agents.schema_agent import SchemaIntelligenceAgent
-from ..agents.supervisor_agent import SupervisorAgent
-from ..agents.duplicate_agent import DuplicateHunterAgent
-from ..agents.quality_agent import DataQualityAgent
-from ..agents.logic_agent import BusinessLogicAgent
-from ..agents.anomaly_agent import AnomalyDetectorAgent
-from ..agents.stale_agent import StaleRecordsAgent
-from ..agents.synthesizer_agent import ReportSynthesizerAgent
-from ..services.file_parser import parse_file
+from graph.state import GraphState, AgentStatus
+from agents.schema_agent import SchemaIntelligenceAgent
+from agents.supervisor_agent import SupervisorAgent
+from agents.duplicate_agent import DuplicateHunterAgent
+from agents.quality_agent import DataQualityAgent
+from agents.logic_agent import BusinessLogicAgent
+from agents.anomaly_agent import AnomalyDetectorAgent
+from agents.stale_agent import StaleRecordsAgent
+from agents.synthesizer_agent import ReportSynthesizerAgent
+from services.file_parser import parse_file
 from datetime import datetime
 
 def _run_agent(agent_cls, state: GraphState) -> dict:
@@ -38,7 +38,18 @@ def anomaly_node(state: GraphState) -> dict: return _run_agent(AnomalyDetectorAg
 def stale_node(state: GraphState) -> dict: return _run_agent(StaleRecordsAgent, state)
 
 def parse_file_node(state: GraphState) -> dict:
-    df_dict, metadata_dict = parse_file(state["file_bytes"], state["filename"])
+    # Skip if already parsed (HITL resume)
+    if state.get("dataframe") and len(state.get("dataframe")) > 0:
+        return {}
+        
+    fb = state.get("file_bytes")
+    fn = state.get("filename")
+    
+    if not fb or not fn:
+        print(f"DEBUG: Missing file_bytes or filename in state. Keys: {state.keys()}")
+        return {}
+        
+    df_dict, metadata_dict = parse_file(fb, fn)
     return {
         "dataframe": df_dict,
         "metadata": metadata_dict
@@ -82,6 +93,10 @@ def synthesizer_node(state: GraphState) -> dict:
     return result
 
 def schema_node(state: GraphState) -> dict:
+    # Skip if already analyzed (HITL resume)
+    if state.get("column_types") and len(state.get("column_types")) > 0:
+        return {}
+        
     start_time = time.time()
     agent = SchemaIntelligenceAgent()
     
@@ -99,6 +114,10 @@ def schema_node(state: GraphState) -> dict:
     return schema_updates
 
 def supervisor_node(state: GraphState) -> dict:
+    # Skip if already routed (HITL resume)
+    if state.get("agents_to_run") and len(state.get("agents_to_run")) > 0:
+        return {}
+        
     start_time = time.time()
     agent = SupervisorAgent()
     

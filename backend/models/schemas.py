@@ -15,7 +15,7 @@ class IssueModel(BaseModel):
     severity: SeverityEnum
     affected_rows: List[int]
     affected_columns: List[str]
-    suggested_fix: str
+    suggested_fix: Any
     count: int
     confidence: float = Field(..., ge=0.0, le=1.0)
 

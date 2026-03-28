@@ -1,7 +1,7 @@
 import pandas as pd
 import json
-from .base import BaseAgent
-from ..graph.state import GraphState, Issue
+from agents.base import BaseAgent
+from graph.state import GraphState, Issue
 
 class DataQualityAgent(BaseAgent):
     agent_name = "data_quality"

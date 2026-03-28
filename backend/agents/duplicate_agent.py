@@ -1,7 +1,7 @@
 import json
 from fuzzywuzzy import fuzz
-from .base import BaseAgent
-from ..graph.state import GraphState, Issue
+from agents.base import BaseAgent
+from graph.state import GraphState, Issue
 
 class DuplicateHunterAgent(BaseAgent):
     agent_name = "duplicate_hunter"

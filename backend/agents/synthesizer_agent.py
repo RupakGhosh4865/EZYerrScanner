@@ -1,6 +1,6 @@
 import json
-from .base import BaseAgent
-from ..graph.state import GraphState
+from agents.base import BaseAgent
+from graph.state import GraphState
 
 class ReportSynthesizerAgent(BaseAgent):
     agent_name = "report_synthesizer"

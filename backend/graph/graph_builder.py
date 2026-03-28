@@ -1,6 +1,6 @@
 from langgraph.graph import StateGraph, END, START
-from .state import GraphState
-from .nodes import (
+from graph.state import GraphState
+from graph.nodes import (
     parse_file_node, schema_node, supervisor_node,
     duplicate_node, quality_node, logic_node,
     anomaly_node, stale_node, aggregate_node, synthesizer_node
@@ -46,4 +46,4 @@ def build_graph():
     
     return workflow.compile()
 
-optiscan_graph = build_graph()
+ezyerr_graph = build_graph()

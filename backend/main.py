@@ -6,21 +6,18 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-app = FastAPI(title="OptiScan AI Backend")
+app = FastAPI(title="EZYerrScanner Backend")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],
+    allow_origins=["http://localhost:5173", "http://localhost:5174"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-try:
-    from routers.analyze import router as analyze_router
-    app.include_router(analyze_router, prefix="/api")
-except ImportError:
-    pass
+from routers.analyze import router as analyze_router
+app.include_router(analyze_router, prefix="/api")
 
 @app.get("/api/health")
 def health_check():
@@ -36,4 +33,4 @@ async def global_exception_handler(request: Request, exc: Exception):
 @app.on_event("startup")
 async def on_startup():
     model = os.getenv("GROQ_MODEL", "llama-3.1-8b-instant")
-    print(f"OptiScan AI ready. Model: {model} (via Groq)")
+    print(f"EZYerrScanner ready. Model: {model} (via Groq)")

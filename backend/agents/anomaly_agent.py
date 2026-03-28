@@ -2,8 +2,8 @@ import pandas as pd
 import numpy as np
 from scipy import stats
 import json
-from .base import BaseAgent
-from ..graph.state import GraphState, Issue
+from agents.base import BaseAgent
+from graph.state import GraphState, Issue
 
 class AnomalyDetectorAgent(BaseAgent):
     agent_name = "anomaly_detector"

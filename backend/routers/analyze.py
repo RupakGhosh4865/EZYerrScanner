@@ -1,21 +1,25 @@
 import asyncio
+import uuid
 from fastapi import APIRouter, File, UploadFile, HTTPException
-from ..models.schemas import AnalysisReport
-from ..graph.graph_builder import optiscan_graph
-from ..graph.state import GraphState
+from models.schemas import AnalysisReport
+from graph.graph_builder import ezyerr_graph
+from graph.state import GraphState
+
+from graph.nodes import parse_file_node, schema_node, supervisor_node, duplicate_node, quality_node, logic_node, anomaly_node, stale_node, aggregate_node, synthesizer_node
 
 router = APIRouter()
+FILE_STORE = {} # Simple in-memory storage for HITL session bytes
 
-@router.post("/analyze", response_model=AnalysisReport)
-async def analyze_file(file: UploadFile = File(...)):
+@router.post("/analyze/plan")
+async def get_analysis_plan(file: UploadFile = File(...)):
     if not file.filename.endswith(('.csv', '.xlsx', '.xls', '.json')):
         raise HTTPException(422, "Unsupported file type. Use CSV, XLSX, or JSON.")
     
     file_bytes = await file.read()
-    if len(file_bytes) > 10 * 1024 * 1024:
-        raise HTTPException(413, "File too large. Maximum 10MB.")
-    
-    initial_state: GraphState = {
+    session_id = str(uuid.uuid4())
+    FILE_STORE[session_id] = file_bytes
+
+    initial_state = {
         "file_bytes": file_bytes,
         "filename": file.filename,
         "dataframe": {},
@@ -33,9 +37,40 @@ async def analyze_file(file: UploadFile = File(...)):
         "generated_at": ""
     }
     
+    # Run nodes sequentially for the plan phase
+    state = initial_state
+    
+    # Node 1: Parse File
+    parse_results = parse_file_node(state)
+    state.update(parse_results)
+    
+    # Node 2: Schema Intelligence
+    schema_results = schema_node(state)
+    state.update(schema_results)
+    
+    # Node 3: Supervisor Decisions
+    supervisor_results = supervisor_node(state)
+    state.update(supervisor_results)
+    
+    # Cleanup for response
+    state.pop("file_bytes", None)
+    state.pop("dataframe", None) 
+    state["session_id"] = session_id
+    
+    return state
+
+@router.post("/analyze/execute", response_model=AnalysisReport)
+async def execute_analysis_plan(state: dict):
+    session_id = state.get("session_id")
+    if not session_id or session_id not in FILE_STORE:
+        raise HTTPException(400, "Invalid or expired session. Please re-upload.")
+    
+    # Restore bytes for the graph execution
+    state["file_bytes"] = FILE_STORE.pop(session_id)
+    
     try:
         final_state = await asyncio.get_event_loop().run_in_executor(
-            None, optiscan_graph.invoke, initial_state
+            None, ezyerr_graph.invoke, state
         )
     except Exception as e:
         raise HTTPException(500, f"Analysis failed: {str(e)}")

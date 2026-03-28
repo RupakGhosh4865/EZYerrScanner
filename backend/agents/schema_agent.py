@@ -1,7 +1,7 @@
 import json
-from .base import BaseAgent
-from ..graph.state import GraphState, Issue
-from ..tools.dataframe_tools import get_all_column_names, get_dataframe_sample, detect_date_columns, get_column_stats
+from agents.base import BaseAgent
+from graph.state import GraphState, Issue
+from tools.dataframe_tools import get_all_column_names, get_dataframe_sample, detect_date_columns, get_column_stats
 
 class SchemaIntelligenceAgent(BaseAgent):
     agent_name = "schema_intelligence"
