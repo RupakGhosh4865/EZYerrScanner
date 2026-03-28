@@ -7,8 +7,7 @@
 
 **EZYerrScanner** is a next-generation, multi-agent AI framework designed to audit, clean, and synthesize complex datasets with surgical precision. Built on a "Cyber-Dark" glassmorphism UI, it leverages a neural network of specialist agents to detect anomalies, business logic violations, and data decay in real-time.
 
-
-<img width="1916" height="970" alt="Image" src="https://github.com/user-attachments/assets/fe46f4a5-34a8-4e3b-a238-76f04c82ab8b" />
+<img width="1919" height="961" alt="Image" src="https://github.com/user-attachments/assets/d52e8b95-8c27-41b5-9902-ef0a4c1f93bc" />
 
 <img width="1919" height="948" alt="Image" src="https://github.com/user-attachments/assets/f7df9bc1-e6f2-4bba-a2e6-b6c62c6bc2e6" />
 
