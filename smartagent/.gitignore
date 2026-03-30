@@ -1,0 +1,32 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.pytest_cache/
+dist/
+build/
+
+# Environment — NEVER commit real tokens
+backend/.env
+!backend/.env.example
+
+# Node
+frontend/node_modules/
+frontend/dist/
+frontend/.env.local
+
+# Docker
+.docker/
+
+# WireMock test repo (large, clone separately)
+# smartsheet-sdk-tests/ is included intentionally for mappings
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/settings.json
+.idea/

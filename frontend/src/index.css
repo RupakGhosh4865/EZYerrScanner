@@ -609,3 +609,129 @@ button:active { transform: translateY(0); }
 .bar-segment {
   height: 100%;
 }
+
+/* ── SmartAgent Phase 4 Styles ──────────────────────────────────────────── */
+
+/* 5-step progress bar */
+.step-bar {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  background: rgba(0, 242, 254, 0.03);
+  border: 1px solid var(--border-neon);
+  border-radius: 10px;
+  padding: 0.6rem 1rem;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+
+.step-tab {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.72rem;
+  color: var(--text-grey);
+  padding: 4px 8px;
+  border-radius: 6px;
+  transition: all 0.2s;
+  font-family: 'Orbitron', sans-serif;
+  letter-spacing: 0.5px;
+}
+
+.step-tab.active {
+  color: var(--neon-blue);
+  background: rgba(0, 242, 254, 0.08);
+  border: 1px solid var(--neon-blue);
+  box-shadow: 0 0 10px rgba(0, 242, 254, 0.2);
+}
+
+.step-tab.done {
+  color: #00ff87;
+}
+
+.step-arrow {
+  opacity: 0.3;
+  margin: 0 2px;
+}
+
+/* HITL action row */
+.action-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--border-neon);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+  background: rgba(255, 255, 255, 0.01);
+}
+
+.action-row:hover {
+  border-color: rgba(0, 242, 254, 0.5);
+  background: rgba(0, 242, 254, 0.03);
+}
+
+.action-row.approved {
+  border-color: rgba(0, 255, 135, 0.4);
+  background: rgba(0, 255, 135, 0.04);
+  box-shadow: 0 0 8px rgba(0, 255, 135, 0.1);
+}
+
+.action-left {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  flex: 1;
+}
+
+.action-toggle {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1px solid var(--border-neon);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+  transition: all 0.2s;
+}
+
+.action-row.approved .action-toggle {
+  border-color: #00ff87;
+  background: rgba(0, 255, 135, 0.1);
+}
+
+.action-title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.action-desc {
+  font-size: 0.78rem;
+  color: var(--text-grey);
+  line-height: 1.5;
+}
+
+.action-value {
+  font-size: 0.72rem;
+  color: var(--neon-blue);
+  margin-top: 4px;
+  font-style: italic;
+  opacity: 0.85;
+}
+
+.action-agent {
+  white-space: nowrap;
+  flex-shrink: 0;
+  padding-top: 4px;
+}
+
+/* --text-primary fallback */
+:root {
+  --text-primary: #e2e8f0;
+}

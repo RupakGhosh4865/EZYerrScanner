@@ -1,0 +1,17 @@
+smartsheet-python-sdk
+langchain
+langchain-groq
+langchain-core
+langgraph
+fastapi
+uvicorn
+python-multipart
+pandas
+numpy
+openpyxl
+python-dotenv
+pydantic
+fuzzywuzzy
+python-Levenshtein
+scipy
+groq
