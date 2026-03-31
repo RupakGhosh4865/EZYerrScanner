@@ -1,220 +1,126 @@
-# SmartAgent — AI-Powered Smartsheet Data Quality Agent
+# SmartAgent — AI-Powered Smartsheet Data Auditing Agent
 
-**Round 2 Submission** for the SSPM AI Agent Challenge.
-
-SmartAgent is a LangGraph-powered agentic system that audits Smartsheet data quality, proposes corrective actions, and applies them through the official Smartsheet Python SDK — with a Human-in-the-Loop approval step before anything is written back.
+**SmartAgent** is a sophisticated, LangGraph-powered auditing suite integrated into the EZYerrScanner ecosystem. It automates the detection of data quality issues across Smartsheet sheets, proposes AI-driven corrective actions, and executes them with a **Human-in-the-Loop (HITL)** approval step.
 
 ---
 
-## Architecture
+## 🏗️ System Architecture
 
-```
-Browser (React)
-    │
-    ▼
-FastAPI Backend (Python 3.11)
-    │
-    ├─ GET  /api/analyze/connect   → list sheets
-    ├─ POST /api/analyze/start     → run LangGraph pipeline
-    └─ POST /api/actions/execute   → apply approved actions
-         │
-         ▼
-LangGraph Pipeline:
-  load_sheet → schema_intelligence → supervisor
-    → duplicate_hunter → quality_auditor → logic_validator → stale_detector
-    → aggregator → synthesizer
-         │
-         ▼
-Smartsheet Python SDK (official)
-    │
-    ├─ Dev/Demo:  WireMock (http://localhost:8082)  ← no real account needed
-    └─ Prod:      api.smartsheet.com                ← real Smartsheet API
-```
+SmartAgent operates as a specialized module within the unified EZYerrScanner platform. It leverages a centralized FastAPI backend and a custom LangGraph "Brain" to process complex auditing tasks.
 
----
+```mermaid
+graph TD
+    subgraph "Frontend (React + Vite)"
+        UI["Unified Dashboard"]
+        Tab1["File Scanner Tab"]
+        Tab2["Smartsheet Audit Tab"]
+    end
 
-## Quickstart (Docker Compose — Recommended)
+    subgraph "Consolidated Backend (FastAPI)"
+        Router["Analyze Router (Port 8000)"]
+        Brain["LangGraph Brain"]
+        Simulator["Smartsheet Simulator"]
+    end
 
-```bash
-git clone https://github.com/your-org/smartagent
-cd smartagent
+    subgraph "Data Layer"
+        SDK["Official Smartsheet SDK"]
+        MOCK["WireMock Server"]
+        LIVE["Live Smartsheet API"]
+        CSV["all_agents_dataset.csv"]
+    end
 
-# Start WireMock + Backend + Frontend together
-docker compose up
-
-# Open the app
-open http://localhost:5174
-
-# WireMock admin (see what SDK calls were made)
-open http://localhost:8082/__admin
+    UI --> Router
+    Router --> Brain
+    Brain --> SDK
+    SDK --> Simulator
+    Simulator --> CSV
+    SDK -.-> MOCK
+    SDK -.-> LIVE
 ```
 
 ---
 
-## Quickstart (Local Dev — No Docker for backend)
+## 🧠 The LangGraph "Brain" (How it Thinks)
 
-```bash
-# 1. Start WireMock (Docker required for this step only)
-cd smartsheet-sdk-tests && docker compose up -d
-cd ..
+The auditing process is managed by a **Stateful Multi-Agent Workflow**. Instead of a simple linear script, SmartAgent uses a supervisor-specialist pattern to analyze data from multiple dimensions.
 
-# 2. Set up Python environment
-cd backend
-python -m venv venv
-venv\Scripts\activate    # Windows
-# source venv/bin/activate  # Mac/Linux
+### The Audit Pipeline
 
-pip install -r requirements.txt
-cp .env.example .env     # edit if needed
+```mermaid
+graph LR
+    START((Start)) --> Load[Load Sheet]
+    Load --> Schema[Schema Intelligence]
+    Schema --> Super[Supervisor]
+    
+    subgraph "Specialist Agents"
+        Super --> Dup[Duplicate Hunter]
+        Super --> Qual[Data Quality]
+        Super --> Logi[Business Logic]
+        Super --> Stal[Stale Detector]
+        Super --> Anom[Anomaly Detector]
+    end
+    
+    Dup --> Agg[Aggregator]
+    Qual --> Agg
+    Logi --> Agg
+    Stal --> Agg
+    Anom --> Agg
+    
+    Agg --> Synth[Synthesizer]
+    Synth --> END((Report Ready))
+```
 
-# 3. Start backend
-uvicorn main:app --reload --port 8000
+### Node Explanations:
+- **Supervisor**: Analyzes the sheet metadata and decides which specialist agents are relevant (e.g., skips "Anomaly Detector" if no numeric columns are present).
+- **Specialist Agents**: Industry-specific logic designed to find duplicates, missing values, status conflicts, and budget overruns.
+- **Aggregator**: Deduplicates findings and calculates an overall **Health Score**.
+- **Synthesizer**: Generates the executive summary and top priorities for the final report.
 
-# 4. Start frontend (separate terminal)
-cd ../frontend
-npm install
+---
+
+## 🔄 The 5-Step Auditing Workflow
+
+SmartAgent follow a rigorous Step-by-Step execution process to ensure data integrity and user control.
+
+1.  **Connect**: Initializes the link with the Smartsheet API or the local Simulator.
+2.  **Select Sheet**: Displays a list of accessible sheets for scanning.
+3.  **Analyze**: Triggers the LangGraph Brain. This is a **read-only** phase that generates AI findings.
+4.  **Review Actions (HITL)**: **Crucial Step.** The AI proposes specific changes (Comments, Cell Updates). You review, approve, or discard each one.
+5.  **Execute**: The system uses the **Official Smartsheet SDK** to apply only the **approved** actions back to the sheet.
+
+---
+
+## 🚀 How to Run
+
+### One-Click Startup (Recommended)
+From the project root, run the unified launcher:
+```powershell
+.\run_scanner.ps1
+```
+
+### Manual Execution
+If you prefer running components separately:
+
+**Backend:**
+```powershell
+cd smartagent/backend
+.\venv\Scripts\python.exe -m uvicorn main:app --port 8000 --reload
+```
+
+**Frontend:**
+```powershell
+cd frontend
 npm run dev
-
-# 5. Open http://localhost:5173
 ```
 
 ---
 
-## Smartsheet Integration
+## 🧪 Simulation Mode vs Live Mode
 
-SmartAgent uses the **official Smartsheet Python SDK** for all API operations.
+SmartAgent includes a **Local Simulator** that allows you to test the full lifecycle without a Smartsheet account.
 
-### Development — WireMock Mock Server
+- **Simulator Mode**: Set `USE_SIMULATOR=true` in `.env`. It reads from `all_agents_dataset.csv`.
+- **Live Mode**: Set `USE_SIMULATOR=false` and provide your `SMARTSHEET_ACCESS_TOKEN`.
 
-Uses the official Smartsheet contract testing server so you can develop and demo without a real Smartsheet account.
-
-```bash
-# Clone the official mock server (already in repo as submodule)
-git clone https://github.com/smartsheet/smartsheet-sdk-tests.git
-
-# Start WireMock (requires Docker)
-cd smartsheet-sdk-tests && docker compose up -d
-
-# Admin UI: http://localhost:8082/__admin
-# → Shows all 198 loaded mappings
-# → Shows every request the SDK sent (MATCHED vs UNMATCHED)
-```
-
-**Proof of real SDK integration:**
-
-```bash
-python scripts/wiremock_admin.py
-```
-
-This shows WireMock's request log. Every call SmartAgent makes goes through the official Smartsheet Python SDK which makes **actual HTTP requests** to WireMock. The log shows:
-- The exact endpoint called (e.g. `POST /sheets/{id}/discussions`)
-- The `Api-Scenario` header we sent
-- Whether WireMock matched it to a mapping
-- The response returned
-
-This is **identical** to how the SDK behaves against the real Smartsheet API — only the base URL changes.
-
-### Production — Real Smartsheet API
-
-1. Get a Personal Access Token: **Smartsheet → Account → Personal Settings → API Access**
-2. Set in `backend/.env`:
-   ```
-   SMARTSHEET_ACCESS_TOKEN=your_token_here
-   USE_MOCK_SERVER=false
-   ```
-3. Restart the backend. No code changes required.
-
-### Environment Modes
-
-| Variable | Dev (default) | Docker | Production |
-|---|---|---|---|
-| `USE_MOCK_SERVER` | `true` | `true` | `false` |
-| `SMARTSHEET_MOCK_URL` | `http://localhost:8082` | `http://wiremock:8080` | _(not used)_ |
-| `SMARTSHEET_ACCESS_TOKEN` | _(not used)_ | _(not used)_ | `your_real_token` |
-
----
-
-## What SmartAgent Does
-
-### Analysis (read-only, safe)
-- **Duplicate Hunter** — finds exact duplicate rows
-- **Quality Auditor** — detects empty/missing cell values
-- **Logic Validator** — flags unrecognised status values
-- **Stale Detector** — identifies stale/overdue date records
-
-### Corrective Actions (write — requires your approval)
-When you approve, SmartAgent can:
-- **Add row comments** explaining each issue (SAFE)
-- **Flag cells** with quality notes without changing values (SAFE)
-- **Update status columns** to "Needs Review" (REVIEW)
-- **Create an audit report sheet** with all findings (REVIEW)
-
-All write operations use the official Smartsheet Python SDK and go through the HITL approval step in the UI.
-
----
-
-## Environment Variables
-
-See `backend/.env.example` for the full list.
-
-```env
-# Switch between mock and live
-USE_MOCK_SERVER=true
-
-# WireMock URL (local dev)
-SMARTSHEET_MOCK_URL=http://localhost:8082
-
-# Real Smartsheet token (production only)
-SMARTSHEET_ACCESS_TOKEN=your_token_here
-```
-
----
-
-## Project Structure
-
-```
-smartagent/
-├── docker-compose.yml          ← starts everything
-├── backend/
-│   ├── main.py                 ← FastAPI app
-│   ├── config.py               ← environment switcher
-│   ├── Dockerfile
-│   ├── requirements.txt
-│   ├── graph/
-│   │   ├── state.py            ← GraphState TypedDict
-│   │   ├── nodes.py            ← all 9 LangGraph nodes
-│   │   └── graph_builder.py   ← pipeline wiring
-│   ├── routers/
-│   │   ├── analyze.py          ← /api/analyze/*
-│   │   └── actions.py          ← /api/actions/execute
-│   └── smartsheet_client/
-│       ├── mock_client.py      ← SDK → WireMock routing
-│       ├── reader.py           ← list_sheets, read_sheet
-│       └── writer.py           ← add_comment, flag_cell, create_audit_sheet
-├── frontend/
-│   └── src/
-│       ├── App.jsx             ← 5-step SmartAgent UI
-│       └── api/client.js       ← API calls
-├── smartsheet-sdk-tests/       ← official WireMock mappings (198 scenarios)
-├── scripts/
-│   ├── add_custom_mappings.py  ← inject missing WireMock scenarios
-│   └── wiremock_admin.py       ← debug WireMock request log
-└── tests/
-    ├── test_reader_writer.py   ← Phase 2 integration tests
-    └── test_end_to_end.py      ← Phase 3 full flow test
-```
-
----
-
-## Submission Checklist
-
-- [x] `docker compose up` starts cleanly (wiremock + backend + frontend)
-- [x] `GET /api/analyze/connect` returns sheets list from WireMock
-- [x] `POST /api/analyze/start` returns issues + proposed_actions
-- [x] `POST /api/actions/execute` runs approved actions via SDK → WireMock
-- [x] `python scripts/wiremock_admin.py` shows requests received by WireMock
-- [x] Frontend shows 5-step flow: Connect → Select → Analyze → Review → Execute
-- [x] HITL approval panel with SAFE / REVIEW / DESTRUCTIVE badges
-- [x] Execution log showing per-action results
-- [x] `.env.example` committed (no real tokens in git)
-- [x] WireMock section in README with both modes explained
+> [!IMPORTANT]
+> **Developer Note on Connectivity**: Every write operation in SmartAgent (like adding comments or updating cells) is routed through the **Official Smartsheet Python SDK**. Even in simulator mode, the SDK thinks it is talking to a real API, ensuring production-ready reliability.
