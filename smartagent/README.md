@@ -4,6 +4,26 @@
 
 ---
 
+<img width="1009" height="553" alt="Image" src="https://github.com/user-attachments/assets/859c1a27-b7a9-4acf-94d4-d4a758b63b8d" />
+
+<img width="927" height="645" alt="Image" src="https://github.com/user-attachments/assets/a03ad3a4-3f37-4af1-85cd-1cfdaab57a5a" />
+
+<img width="1919" height="971" alt="Image" src="https://github.com/user-attachments/assets/ea32ba1b-ba71-40c0-8e6a-e4f09f25be5e" />
+
+<img width="1919" height="966" alt="Image" src="https://github.com/user-attachments/assets/b1343180-279c-4710-b621-1891a546958c" />
+
+<img width="1919" height="967" alt="Image" src="https://github.com/user-attachments/assets/bac0f0f6-fc27-4d6a-829e-88077c7af1a9" />
+
+<img width="1919" height="970" alt="Image" src="https://github.com/user-attachments/assets/2240244e-43bf-487f-83c5-6da575168783" />
+
+<img width="1919" height="968" alt="Image" src="https://github.com/user-attachments/assets/d83fadea-1732-4e54-b258-dee53ca052e8" />
+
+<img width="1919" height="968" alt="Image" src="https://github.com/user-attachments/assets/ab41d9e1-ddf2-4882-9985-672277aed009" />
+
+<img width="1917" height="963" alt="Image" src="https://github.com/user-attachments/assets/b72430bf-9ef5-4966-bf33-2eb001bcb56c" />
+
+<img width="1369" height="648" alt="Image" src="https://github.com/user-attachments/assets/2f38107f-b4d6-42d3-91ac-51da2e362605" />
+
 ## 🏗️ System Architecture
 
 SmartAgent operates as a specialized module within the unified EZYerrScanner platform. It leverages a centralized FastAPI backend and a custom LangGraph "Brain" to process complex auditing tasks.
