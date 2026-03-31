@@ -43,7 +43,7 @@ cd smartagent
 docker compose up
 
 # Open the app
-open http://localhost:5173
+open http://localhost:5174
 
 # WireMock admin (see what SDK calls were made)
 open http://localhost:8082/__admin

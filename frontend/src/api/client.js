@@ -1,12 +1,41 @@
 /**
- * SmartAgent API Client
+ * EZYerrScanner API Client
  * Connects the frontend to the FastAPI backend.
- * Supports both WireMock (dev) and real Smartsheet (prod).
+ * Supports both standard file-based scanning and SmartAgent Smartsheet auditing.
  */
 
 const BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:8000"
 
-// ─── Step 1: Test Smartsheet connectivity ─────────────────────────────────
+// ─── File Scanner API (Original) ───────────────────────────────────────────
+
+export async function generatePlan(file) {
+  const formData = new FormData()
+  formData.append('file', file)
+  const res = await fetch(`${BASE_URL}/api/analyze/plan`, {
+    method: 'POST',
+    body: formData
+  })
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({ detail: "Analysis failed" }))
+    throw new Error(err.detail || "Plan generation failed")
+  }
+  return res.json()
+}
+
+export async function executeAnalysisPlan(state) {
+  const res = await fetch(`${BASE_URL}/api/analyze/execute`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(state)
+  })
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({ detail: "Execution failed" }))
+    throw new Error(err.detail || "Analysis execution failed")
+  }
+  return res.json()
+}
+
+// ─── SmartAgent Smartsheet API ─────────────────────────────────────────────
 
 export async function connectToSmartsheet() {
   const res = await fetch(`${BASE_URL}/api/analyze/connect`)
@@ -64,4 +93,29 @@ export async function executeActions({
   }
   // Returns: { executed_actions, audit_sheet_url, total_executed, success_count, failed_count }
   return res.json()
+}
+
+export async function downloadCorrectedCsv({
+  sheetId,
+  approvedActionIds,
+  proposedActions,
+  columnMap,
+  sheetName
+}) {
+  const res = await fetch(`${BASE_URL}/api/actions/download_csv`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      sheet_id: sheetId,
+      approved_action_ids: approvedActionIds,
+      proposed_actions: proposedActions,
+      column_map: columnMap,
+      sheet_name: sheetName
+    })
+  })
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({ detail: "CSV download failed" }))
+    throw new Error(err.detail || "CSV download failed")
+  }
+  return res.blob()
 }

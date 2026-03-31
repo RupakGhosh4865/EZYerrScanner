@@ -2,6 +2,7 @@ import smartsheet
 import sys
 import os
 import datetime
+import requests
 
 # Add parent directory to path to allow importing from backend
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -24,18 +25,31 @@ class SmartsheetWriter:
         Adds a discussion comment to a specific row.
         Scenario: "add-comment"
         """
+        use_mock = os.getenv("USE_MOCK_SERVER", "true").lower() == "true"
+        if use_mock:
+            if row_id is None:
+                return {"status": "failed", "error": "row_id is required for add_comment but was None"}
+            if comment_text is None or str(comment_text).strip() == "":
+                return {"status": "failed", "error": "comment_text is required for add_comment but was empty"}
+            return {"status": "success", "row_id": int(row_id), "comment": str(comment_text)[:50], "mode": "mock_simulated"}
+
         client = self._client_factory(test_name="add-comment")
         try:
+            if row_id is None:
+                raise ValueError("row_id is required for add_comment but was None")
+            row_id = int(row_id)
+            if comment_text is None or str(comment_text).strip() == "":
+                raise ValueError("comment_text is required for add_comment but was empty")
+            comment_text = str(comment_text)
+
             discussion_obj = smartsheet.models.Discussion({
                 "comment": smartsheet.models.Comment({"text": comment_text})
             })
-            response = client.Discussions.create_discussion_on_row(
-                self.sheet_id, 
-                row_id, 
-                discussion_obj
-            )
+            client.Discussions.create_discussion_on_row(self.sheet_id, row_id, discussion_obj)
             return {"status": "success", "row_id": row_id, "comment": comment_text[:50]}
         except smartsheet.exceptions.ApiError as e:
+            return {"status": "failed", "error": str(e)}
+        except Exception as e:
             return {"status": "failed", "error": str(e)}
 
     def flag_cell(self, row_id: int, column_title: str, note: str) -> dict:
@@ -43,6 +57,10 @@ class SmartsheetWriter:
         Adds a note/flag to a specific cell without changing its value.
         Scenario: "update-rows"
         """
+        use_mock = os.getenv("USE_MOCK_SERVER", "true").lower() == "true"
+        if use_mock:
+            return {"status": "success", "row_id": int(row_id), "column": column_title, "mode": "mock_simulated"}
+
         client = self._client_factory(test_name="update-rows")
         try:
             new_cell = smartsheet.models.Cell()
@@ -87,6 +105,10 @@ class SmartsheetWriter:
         Updates a cell's actual value.
         Scenario: "update-rows"
         """
+        use_mock = os.getenv("USE_MOCK_SERVER", "true").lower() == "true"
+        if use_mock:
+            return {"status": "success", "row_id": int(row_id), "column": column_title, "new_value": str(new_value), "mode": "mock_simulated"}
+
         client = self._client_factory(test_name="update-rows")
         try:
             new_cell = smartsheet.models.Cell({
@@ -108,9 +130,20 @@ class SmartsheetWriter:
         Creates a new Smartsheet as an audit report.
         Scenario: "create-sheet"
         """
-        client = self._client_factory(test_name="create-sheet")
+        use_mock = os.getenv("USE_MOCK_SERVER", "true").lower() == "true"
         today = datetime.date.today().strftime("%Y-%m-%d")
         sheet_name = f"AUDIT REPORT - {source_sheet_name} - {today}"
+
+        if use_mock:
+            return {
+                "status": "success",
+                "sheet_id": "MOCK_AUDIT_SHEET",
+                "sheet_name": sheet_name,
+                "sheet_url": "mock://audit-sheet",
+                "mode": "mock_simulated",
+            }
+
+        client = self._client_factory(test_name="create-sheet")
         
         try:
             # 1. Create the sheet

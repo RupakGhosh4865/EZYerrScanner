@@ -4,6 +4,10 @@ SmartAgent Backend — FastAPI Main Entry Point
 import os
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from dotenv import load_dotenv
+
+# Load environment variables from .env
+load_dotenv()
 
 # Routers
 from routers.connect import router as connect_router
@@ -16,15 +20,12 @@ app = FastAPI(
     version="2.0.0"
 )
 
-# CORS — allow specific origins in dev
+# CORS — allow all origins in dev
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:5173",
-        "http://127.0.0.1:5173",
-        "http://0.0.0.0:5173",
-        "http://localhost:5174",
-        "http://127.0.0.1:5174",
+        "http://localhost:5174"
     ],
     allow_credentials=True,
     allow_methods=["*"],

@@ -1,12 +1,10 @@
-import { Home, Search, History, CreditCard, Settings, LogOut, Shield, X } from 'lucide-react';
+import { Home, Search, History, CreditCard, Settings, LogOut, Shield, X, Database } from 'lucide-react';
 
-export default function Sidebar({ isOpen, onClose }) {
+export default function Sidebar({ isOpen, onClose, activeTab, onTabChange }) {
   const menuItems = [
-    { icon: <Home size={20} />, label: 'Home', active: true },
-    { icon: <Search size={20} />, label: 'New Scan' },
-    { icon: <History size={20} />, label: 'Previous Scans' },
-    { icon: <CreditCard size={20} />, label: 'Pricing' },
-    { icon: <Settings size={20} />, label: 'Settings' },
+    { id: 'file_scan', icon: <Search size={20} />, label: 'File Scan' },
+    { id: 'smartsheet_audit', icon: <Database size={20} />, label: 'Smartsheet Audit' },
+    { id: 'settings', icon: <Settings size={20} />, label: 'Settings' },
   ];
 
   return (
@@ -29,13 +27,17 @@ export default function Sidebar({ isOpen, onClose }) {
         </div>
         <div className="logo-text">
           <span className="brand-name">EZYerrScanner</span>
-          <span className="brand-version">SYSTEM.V1</span>
+          <span className="brand-version">SYSTEM.V2</span>
         </div>
       </div>
 
       <nav className="sidebar-nav">
-        {menuItems.map((item, i) => (
-          <div key={i} className={`nav-item ${item.active ? 'active' : ''}`}>
+        {menuItems.map((item) => (
+          <div 
+            key={item.id} 
+            className={`nav-item ${activeTab === item.id ? 'active' : ''}`}
+            onClick={() => onTabChange(item.id)}
+          >
             {item.icon}
             <span className="nav-label">{item.label}</span>
           </div>

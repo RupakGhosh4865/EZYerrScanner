@@ -31,25 +31,16 @@ No code changes required between any of the three environments.
 """
 
 
-from dotenv import load_dotenv
-
-# Load .env but do NOT override existing environment variables (important for Docker)
-load_dotenv(override=False)
-
 def get_smartsheet_client(test_name: str = "list-sheets"):
     """
     Factory: returns the correct Smartsheet client for the current environment.
+
+    - MockSmartsheetClient  → routes SDK calls to WireMock  (USE_MOCK_SERVER=true)
+    - smartsheet.Smartsheet → routes SDK calls to real API   (USE_MOCK_SERVER=false)
     """
     use_mock = os.getenv("USE_MOCK_SERVER", "true").lower() == "true"
-    
-    # Priority: 1. ENV (Docker/Manual) -> 2. Docker default -> 3. Local default
-    mock_url = os.getenv("SMARTSHEET_MOCK_URL")
-    if not mock_url:
-        is_docker = os.getenv("RUNNING_IN_DOCKER", "false").lower() == "true"
-        mock_url = "http://wiremock:8080" if is_docker else "http://localhost:8082"
 
     if use_mock:
-        print(f"DEBUG: SmartAgent using MOCK mode with URL: {mock_url}")
         from smartsheet_client.mock_client import MockSmartsheetClient
         return MockSmartsheetClient(test_name=test_name)
 

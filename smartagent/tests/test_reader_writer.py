@@ -24,16 +24,16 @@ class TestSmartsheetReader:
         sheets = reader.list_sheets()
         sheet_id = sheets[0]["id"]
         
-        df, meta, raw_rows, col_map = reader.read_sheet(sheet_id)
+        records, meta, raw_rows, col_map = reader.read_sheet(sheet_id)
         
         print("\n--- read_sheet test ---")
-        assert df is not None
-        assert len(df) > 0
+        assert records is not None
+        assert len(records) > 0
         assert len(col_map) > 0
         assert all("__row_id__" in r for r in raw_rows)
         assert meta["sheet_name"] is not None
-        print(f"  DataFrame shape: {df.shape}")
-        print(f"  Columns: {list(df.columns)}")
+        print(f"  Records: {len(records)} rows")
+        print(f"  Columns: {list(records[0].keys())}")
         print(f"  Column map: {col_map}")
     
     def test_raw_rows_have_row_ids(self):

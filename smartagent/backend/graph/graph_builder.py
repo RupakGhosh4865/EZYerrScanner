@@ -12,6 +12,7 @@ from graph.nodes import (
     quality_node,
     logic_node,
     stale_node,
+    anomaly_node,
     aggregate_node,
     synthesizer_node,
 )
@@ -21,27 +22,29 @@ def build_smartagent_graph():
     workflow = StateGraph(GraphState)
 
     # Register all nodes
-    workflow.add_node("load_sheet",          load_sheet_node)
+    workflow.add_node("sheet_loader",          load_sheet_node)
     workflow.add_node("schema_intelligence", schema_node)
     workflow.add_node("supervisor",          supervisor_node)
     workflow.add_node("duplicate_hunter",    duplicate_node)
-    workflow.add_node("quality_auditor",     quality_node)
-    workflow.add_node("logic_validator",     logic_node)
-    workflow.add_node("stale_detector",      stale_node)
+    workflow.add_node("data_quality",        quality_node)
+    workflow.add_node("business_logic",      logic_node)
+    workflow.add_node("stale_records",       stale_node)
+    workflow.add_node("anomaly_detector",    anomaly_node)
     workflow.add_node("aggregator",          aggregate_node)
     workflow.add_node("synthesizer",         synthesizer_node)
 
     # Main pipeline edges
-    workflow.add_edge(START,                "load_sheet")
-    workflow.add_edge("load_sheet",         "schema_intelligence")
+    workflow.add_edge(START,                "sheet_loader")
+    workflow.add_edge("sheet_loader",       "schema_intelligence")
     workflow.add_edge("schema_intelligence", "supervisor")
 
     # Sequential specialist agents (avoids concurrent write conflicts)
     workflow.add_edge("supervisor",       "duplicate_hunter")
-    workflow.add_edge("duplicate_hunter", "quality_auditor")
-    workflow.add_edge("quality_auditor",  "logic_validator")
-    workflow.add_edge("logic_validator",  "stale_detector")
-    workflow.add_edge("stale_detector",   "aggregator")
+    workflow.add_edge("duplicate_hunter", "data_quality")
+    workflow.add_edge("data_quality",     "business_logic")
+    workflow.add_edge("business_logic",   "stale_records")
+    workflow.add_edge("stale_records",    "anomaly_detector")
+    workflow.add_edge("anomaly_detector", "aggregator")
 
     workflow.add_edge("aggregator",  "synthesizer")
     workflow.add_edge("synthesizer", END)

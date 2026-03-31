@@ -25,10 +25,21 @@ async def test_connection():
         client = get_smartsheet_client(test_name="list-sheets")
         # In real SDK, client is smartsheet.Smartsheet object
         # In mock client, it has same interface
-        response = client.Sheets.list_sheets(include_all=True)
+        response = client.Sheets.list_sheets()
+
+        # Some SDK versions return an Error object instead of a response with .data
+        if not hasattr(response, "data"):
+            error_msg = getattr(response, "message", str(response))
+            raise RuntimeError(f"Smartsheet SDK returned error instead of sheet list: {error_msg}")
         
-        sheets = [{"id": str(s.id), "name": s.name, 
-                   "modified_at": str(s.modified_at)} for s in response.data]
+        sheets = [
+            {
+                "id": str(s.id),
+                "name": s.name,
+                "modified_at": str(getattr(s, "modified_at", "")),
+            }
+            for s in response.data
+        ]
         
         return {
             "mode": "real",
@@ -36,6 +47,20 @@ async def test_connection():
             "user_name": "Authenticated User"
         }
     except Exception as e:
+        # Detailed logging for debugging SDK errors
+        try:
+            client = get_smartsheet_client(test_name="debug")
+            print(f"DEBUG: Smartsheet API Exception: {type(e).__name__} - {type(e).__name__}: {str(e)}")
+            
+            # If it returned an Error-like object but didn't raise
+            response = client.Sheets.list_sheets()
+            if hasattr(response, "result") and hasattr(getattr(response, "result", None), "error_code"):
+                print(f"DEBUG: SDK Error Object: {response.result}")
+            elif hasattr(response, "message"):
+                print(f"DEBUG: SDK Error Message: {response.message}")
+        except Exception as inner:
+            print(f"DEBUG: Secondary debug call failed: {type(inner).__name__}: {str(inner)}")
+
         raise HTTPException(status_code=401, detail=f"Smartsheet connection failed: {str(e)}")
 
 @router.get("/sheet/{sheet_id}")

@@ -1,3 +1,5 @@
+version: "3.9"
+
 services:
 
   wiremock:
@@ -20,10 +22,9 @@ services:
       - "8000:8000"
     env_file: ./backend/.env
     environment:
-      # Explicitly set internal WireMock URL for Docker network
+      # Override URL to use Docker internal network hostname
       - SMARTSHEET_MOCK_URL=http://wiremock:8080
       - USE_MOCK_SERVER=true
-      - RUNNING_IN_DOCKER=true
     depends_on:
       wiremock:
         condition: service_healthy
