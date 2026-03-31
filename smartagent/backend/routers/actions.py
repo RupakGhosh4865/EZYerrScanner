@@ -2,14 +2,17 @@
 SmartAgent Actions Router
 POST /api/actions/execute — executes approved actions against Smartsheet
 """
+import io
+import csv
+import os
+import logging
 from fastapi import APIRouter, HTTPException
 from fastapi.responses import StreamingResponse
 from pydantic import BaseModel
 from typing import List, Dict, Any
-import io
-import csv
 
 router = APIRouter(prefix="/actions", tags=["actions"])
+logger = logging.getLogger("uvicorn.error")
 
 
 class ExecuteRequest(BaseModel):
@@ -52,6 +55,7 @@ async def execute_actions(request: ExecuteRequest):
     try:
         result = execute_actions_node(state)
     except Exception as e:
+        logger.error(f"Action execution error: {str(e)}")
         raise HTTPException(status_code=500, detail=f"Action execution failed: {str(e)}")
 
     executed = result.get("executed_actions", [])
@@ -74,60 +78,92 @@ async def download_corrected_csv(request: DownloadCsvRequest):
 
     reader = SmartsheetReader()
     try:
+        # Load the latest state of the sheet
         records, _meta, raw_rows, _column_map = reader.read_sheet(request.sheet_id)
     except Exception as e:
+        logger.error(f"CSV Export Error: Failed to load sheet: {str(e)}")
         raise HTTPException(status_code=500, detail=f"Failed to load sheet for CSV export: {str(e)}")
 
-    # Map row_id -> record index
-    row_id_to_idx: dict[int, int] = {}
+    # Map row_id -> record index (support both int and string IDs)
+    row_id_to_idx = {}
     for idx, rr in enumerate(raw_rows):
         rid = rr.get("__row_id__")
-        if rid is None:
-            continue
-        try:
-            row_id_to_idx[int(rid)] = idx
-        except Exception:
-            continue
+        if rid is not None:
+            row_id_to_idx[str(rid)] = idx
+            try:
+                row_id_to_idx[int(rid)] = idx
+            except: pass
 
     approved = set(request.approved_action_ids or [])
     proposed = request.proposed_actions or []
 
+    # Apply approved updates to the records in memory
+    logger.info(f"Applying {len(approved)} approved actions to {len(records)} records...")
     for action in proposed:
-        if action.get("action_id") not in approved:
+        aid = action.get("action_id")
+        if aid not in approved:
             continue
+            
         atype = action.get("action_type")
         if atype not in ("update_cell_value", "update_status"):
+            logger.warning(f"Skipping action {aid} of type {atype}")
             continue
 
         target_row_id = action.get("target_row_id")
         column_title = action.get("column_title") or "Status"
         proposed_value = action.get("proposed_value")
+        
         if target_row_id is None:
+            logger.warning(f"Action {aid} missing target_row_id")
             continue
-        rec_idx = row_id_to_idx.get(int(target_row_id), None)
-        if rec_idx is None or rec_idx >= len(records):
-            continue
-        records[rec_idx][str(column_title)] = "" if proposed_value is None else str(proposed_value)
+            
+        # Try finding row by original type, then by string
+        rec_idx = row_id_to_idx.get(target_row_id)
+        if rec_idx is None:
+            rec_idx = row_id_to_idx.get(str(target_row_id))
+            
+        if rec_idx is not None and rec_idx < len(records):
+            # Find the actual key in record (case-insensitive check to match CSV headers)
+            target_key = str(column_title)
+            actual_key = next((k for k in records[rec_idx].keys() if k.lower() == target_key.lower()), target_key)
+            old_val = records[rec_idx].get(actual_key)
+            records[rec_idx][actual_key] = "" if proposed_value is None else str(proposed_value)
+            logger.info(f"Fixed Row {target_row_id} [{actual_key}]: '{old_val}' -> '{records[rec_idx][actual_key]}'")
+        else:
+            logger.error(f"Failed to find Row {target_row_id} in {len(records)} records")
 
-    # Column order: prefer column_map keys; else union of record keys
-    if request.column_map:
+    # Determine CSV headers
+    if request.column_map and len(request.column_map) > 0:
         fieldnames = list(request.column_map.keys())
     else:
-        keys = set()
+        keys = []
+        if records:
+            keys = list(records[0].keys())
+        fieldnames = keys if keys else ["Sheet Data"]
+
+    try:
+        # Generate CSV bytes in memory
+        buf = io.StringIO()
+        writer = csv.DictWriter(buf, fieldnames=fieldnames, extrasaction="ignore")
+        writer.writeheader()
         for r in records:
-            keys.update(r.keys())
-        fieldnames = sorted(keys)
+            # Cast all values to string to avoid serialization errors
+            writer.writerow({k: "" if r.get(k) is None else str(r.get(k)) for k in fieldnames})
 
-    buf = io.StringIO()
-    writer = csv.DictWriter(buf, fieldnames=fieldnames, extrasaction="ignore")
-    writer.writeheader()
-    for r in records:
-        writer.writerow({k: r.get(k, "") for k in fieldnames})
-
-    filename = f"{(request.sheet_name or 'sheet').replace(' ', '_')}_corrected.csv"
-    data = buf.getvalue().encode("utf-8")
-    return StreamingResponse(
-        io.BytesIO(data),
-        media_type="text/csv; charset=utf-8",
-        headers={"Content-Disposition": f'attachment; filename="{filename}"'}
-    )
+        # Sanitize filename: remove non-ASCII characters (like em-dash) which break HTTP headers
+        base_name = (request.sheet_name or 'sheet').replace(' ', '_')
+        safe_name = base_name.encode('ascii', 'ignore').decode('ascii')
+        filename = f"{safe_name}_corrected.csv"
+        
+        data = buf.getvalue().encode("utf-8")
+        return StreamingResponse(
+            io.BytesIO(data),
+            media_type="text/csv",
+            headers={
+                "Content-Disposition": f'attachment; filename="{filename}"',
+                "Access-Control-Expose-Headers": "Content-Disposition"
+            }
+        )
+    except Exception as e:
+        logger.error(f"CSV Export Error: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"CSV formatting error: {str(e)}")

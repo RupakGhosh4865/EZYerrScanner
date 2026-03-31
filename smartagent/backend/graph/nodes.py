@@ -46,6 +46,19 @@ def _make_action(action_type: str, agent: str, target_row_id: int,
         "risk_level": risk_level,
     }
 
+def _safe_float(val: Any) -> float:
+    """Helper to convert string/mixed data to float safely."""
+    if val is None:
+        return 0.0
+    try:
+        # Remove common currency/percentage symbols
+        clean_val = str(val).replace("%", "").replace("$", "").replace(",", "").strip()
+        if clean_val in ("", "—", "N/A", "null", "none", "done"):
+            return 0.0
+        return float(clean_val)
+    except (ValueError, TypeError):
+        return 0.0
+
 # ─────────────────────────────────────────────────────────────────────────────
 # STEP 1 — Load Sheet (reads from WireMock or real Smartsheet)
 # ─────────────────────────────────────────────────────────────────────────────
@@ -162,8 +175,22 @@ def duplicate_node(state: GraphState) -> dict:
                     severity="HIGH",
                     affected_rows=row_ids,
                     affected_columns=list(records[0].keys()),
-                    suggested_fix="Remove duplicates."
+                    suggested_fix="Remove duplicates manually."
                 ))
+                # Propose a flag action for the second+ rows
+                for idx in group[1:]:
+                    if idx < len(raw_rows):
+                        proposed_actions.append(_make_action(
+                            action_type="flag_cell",  # Simulator can't delete yet
+                            agent="duplicate_hunter",
+                            target_row_id=raw_rows[idx]["__row_id__"],
+                            column_title="task_id",
+                            column_id=0,
+                            current_value=str(records[idx].get("task_id")),
+                            proposed_value="[DUPLICATE]",
+                            reason="Exact row duplicate found.",
+                            severity="HIGH"
+                        ))
 
     duration = int((time.time() - start_time) * 1000)
     return {
@@ -178,6 +205,7 @@ def quality_node(state: GraphState) -> dict:
     records = state.get("dataframe", [])
     raw_rows = state.get("raw_rows", [])
     issues = []
+    proposed_actions = []
     for i, rec in enumerate(records):
         empty_cols = [col for col, val in rec.items() if val is None or str(val).strip() == ""]
         if empty_cols and i < len(raw_rows):
@@ -190,9 +218,26 @@ def quality_node(state: GraphState) -> dict:
                 affected_columns=empty_cols,
                 suggested_fix="Fill missing data."
             ))
+            
+        # Detect non-numeric strings in budget/completion and propose removal
+        for col in ["budget_usd", "actual_cost_usd", "completion_pct", "subtask_count"]:
+            val = rec.get(col)
+            if val and str(val).strip().lower() in ("done", "n/a", "—", "null", "none"):
+                proposed_actions.append(_make_action(
+                    action_type="update_cell_value",
+                    agent="data_quality",
+                    target_row_id=raw_rows[i]["__row_id__"],
+                    column_title=col,
+                    column_id=0,
+                    current_value=str(val),
+                    proposed_value="", # Propose clearing the noise
+                    reason=f"Column '{col}' expects a number, but found '{val}'.",
+                    severity="MEDIUM"
+                ))
     duration = int((time.time() - start_time) * 1000)
     return {
         "issues": issues,
+        "proposed_actions": proposed_actions,
         "agent_statuses": [{"name": "data_quality", "status": "done",
                             "duration_ms": duration, "issue_count": len(issues)}]
     }
@@ -202,23 +247,66 @@ def logic_node(state: GraphState) -> dict:
     records = state.get("dataframe", [])
     raw_rows = state.get("raw_rows", [])
     issues = []
-    # Simple logic: check if completion > 0 but status is 'Not Started'
+    proposed_actions = []
+    # Simple logic Check 1: status="Not Started" but completion > 0
     for i, rec in enumerate(records):
-        status = str(rec.get("status", "")).lower()
-        comp = float(str(rec.get("completion_pct", 0)).replace("%","")) if rec.get("completion_pct") else 0
+        status_orig = str(rec.get("status", ""))
+        status = status_orig.lower()
+        comp = _safe_float(rec.get("completion_pct", 0))
         if status == "not started" and comp > 0 and i < len(raw_rows):
+            row_id = raw_rows[i]["__row_id__"]
             issues.append(_make_issue(
                 agent="business_logic",
                 title="Status Conflict",
-                description="Status is 'Not Started' but completion > 0%.",
+                description=f"Status is 'Not Started' but completion is {comp}%.",
                 severity="LOW",
-                affected_rows=[raw_rows[i]["__row_id__"]],
+                affected_rows=[row_id],
                 affected_columns=["status", "completion_pct"],
                 suggested_fix="Update status to 'In Progress'."
+            ))
+            proposed_actions.append(_make_action(
+                action_type="update_cell_value",
+                agent="business_logic",
+                target_row_id=row_id,
+                column_title="status",
+                column_id=0,
+                current_value=status_orig,
+                proposed_value="In Progress",
+                reason=f"Work has started ({comp}%) so status should be 'In Progress'.",
+                severity="LOW"
+            ))
+
+    # Simple logic Check 2: completion=100 but status != "Done"
+    for i, rec in enumerate(records):
+        status_orig = str(rec.get("status", ""))
+        status = status_orig.lower()
+        comp = _safe_float(rec.get("completion_pct", 0))
+        if comp == 100 and status != "done" and status != "cancelled" and i < len(raw_rows):
+            row_id = raw_rows[i]["__row_id__"]
+            issues.append(_make_issue(
+                agent="business_logic",
+                title="Completion Contradiction",
+                description="Task is 100% complete but status is not 'Done'.",
+                severity="MEDIUM",
+                affected_rows=[row_id],
+                affected_columns=["status", "completion_pct"],
+                suggested_fix="Mark task as 'Done'."
+            ))
+            proposed_actions.append(_make_action(
+                action_type="update_cell_value",
+                agent="business_logic",
+                target_row_id=row_id,
+                column_title="status",
+                column_id=0,
+                current_value=status_orig,
+                proposed_value="Done",
+                reason="Completion is 100%.",
+                severity="MEDIUM"
             ))
     duration = int((time.time() - start_time) * 1000)
     return {
         "issues": issues,
+        "proposed_actions": proposed_actions,
         "agent_statuses": [{"name": "business_logic", "status": "done",
                             "duration_ms": duration, "issue_count": len(issues)}]
     }
@@ -240,8 +328,8 @@ def anomaly_node(state: GraphState) -> dict:
     issues = []
     proposed_actions = []
     for i, rec in enumerate(records):
-        budget = float(str(rec.get("budget_usd", 0)).replace(",","")) if rec.get("budget_usd") else 0
-        actual = float(str(rec.get("actual_cost_usd", 0)).replace(",","")) if rec.get("actual_cost_usd") else 0
+        budget = _safe_float(rec.get("budget_usd", 0))
+        actual = _safe_float(rec.get("actual_cost_usd", 0))
         if actual > budget and budget > 0 and i < len(raw_rows):
             row_id = raw_rows[i]["__row_id__"]
             issues.append(_make_issue(

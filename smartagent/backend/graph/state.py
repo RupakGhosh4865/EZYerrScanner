@@ -68,7 +68,7 @@ class GraphState(TypedDict):
     agent_statuses: Annotated[list[AgentStatus], operator.add]
 
     # === Action lifecycle ===
-    proposed_actions: list[ProposedAction]    # What agents want to do
+    proposed_actions: Annotated[list[ProposedAction], operator.add]
     approved_action_ids: list[str]            # Set by HITL step
     executed_actions: list[ExecutedAction]    # What actually ran
     audit_sheet_url: str                      # URL of created audit sheet
