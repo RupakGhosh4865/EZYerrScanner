@@ -31,49 +31,56 @@ async def get_analysis_plan(file: UploadFile = File(...)):
     if not file.filename.endswith(('.csv', '.xlsx', '.xls', '.json')):
         raise HTTPException(422, "Unsupported file type. Use CSV, XLSX, or JSON.")
     
-    file_bytes = await file.read()
-    session_id = str(uuid.uuid4())
-    FILE_STORE[session_id] = file_bytes
+    try:
+        file_bytes = await file.read()
+        session_id = str(uuid.uuid4())
+        FILE_STORE[session_id] = file_bytes
 
-    initial_state = {
-        "file_bytes": file_bytes,
-        "filename": file.filename,
-        "dataframe": {},
-        "metadata": {},
-        "domain": "generic",
-        "column_types": {},
-        "primary_key_cols": [],
-        "date_col_pairs": [],
-        "agents_to_run": [],
-        "issues": [],
-        "agent_statuses": [],
-        "health_score": 100,
-        "executive_summary": "",
-        "top_priorities": [],
-        "generated_at": ""
-    }
-    
-    # Run nodes sequentially for the plan phase
-    state = initial_state
-    
-    # Node 1: Parse File
-    parse_results = parse_file_node(state)
-    state.update(parse_results)
-    
-    # Node 2: Schema Intelligence
-    schema_results = schema_node(state)
-    state.update(schema_results)
-    
-    # Node 3: Supervisor Decisions
-    supervisor_results = supervisor_node(state)
-    state.update(supervisor_results)
-    
-    # Cleanup for response
-    state.pop("file_bytes", None)
-    state.pop("dataframe", None) 
-    state["session_id"] = session_id
-    
-    return state
+        initial_state = {
+            "file_bytes": file_bytes,
+            "filename": file.filename,
+            "dataframe": {},
+            "metadata": {},
+            "domain": "generic",
+            "column_types": {},
+            "primary_key_cols": [],
+            "date_col_pairs": [],
+            "agents_to_run": [],
+            "issues": [],
+            "agent_statuses": [],
+            "health_score": 100,
+            "executive_summary": "",
+            "top_priorities": [],
+            "generated_at": ""
+        }
+        
+        # Run nodes sequentially for the plan phase
+        state = initial_state
+        
+        # Node 1: Parse File
+        parse_results = parse_file_node(state)
+        state.update(parse_results)
+        
+        # Node 2: Schema Intelligence
+        schema_results = schema_node(state)
+        state.update(schema_results)
+        
+        # Node 3: Supervisor Decisions
+        supervisor_results = supervisor_node(state)
+        state.update(supervisor_results)
+        
+        # Cleanup for response
+        state.pop("file_bytes", None)
+        state.pop("dataframe", None) 
+        state["session_id"] = session_id
+        
+        return state
+    except Exception as e:
+        print(f"PLAN_ERROR: {str(e)}")
+        raise HTTPException(
+            status_code=500, 
+            detail=f"Failed to generate analysis plan: {str(e)}"
+        )
 
 
 @router.post("/execute", response_model=AnalysisReport)
@@ -183,12 +190,22 @@ async def start_analysis(request: AnalyzeRequest):
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Analysis failed: {str(e)}")
 
+    issues = final_state.get("issues", [])
+    total_issues_by_severity = {
+        "HIGH": sum(1 for i in issues if i["severity"] == "HIGH"),
+        "MEDIUM": sum(1 for i in issues if i["severity"] == "MEDIUM"),
+        "LOW": sum(1 for i in issues if i["severity"] == "LOW"),
+    }
+
     return {
         "sheet_id": request.sheet_id,
         "sheet_name": final_state.get("sheet_name", ""),
         "health_score": final_state.get("health_score", 0),
+        "rows_scanned": final_state.get("rows_scanned", 0),
+        "metadata": final_state.get("metadata", {}),
+        "total_issues_by_severity": total_issues_by_severity,
         "domain": final_state.get("domain", ""),
-        "issues": final_state.get("issues", []),
+        "issues": issues,
         "proposed_actions": final_state.get("proposed_actions", []),
         "agent_statuses": final_state.get("agent_statuses", []),
         "executive_summary": final_state.get("executive_summary", ""),

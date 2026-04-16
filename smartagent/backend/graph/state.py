@@ -74,6 +74,7 @@ class GraphState(TypedDict):
     audit_sheet_url: str                      # URL of created audit sheet
 
     # === Report ===
+    rows_scanned: int
     health_score: int
     executive_summary: str
     top_priorities: list[str]

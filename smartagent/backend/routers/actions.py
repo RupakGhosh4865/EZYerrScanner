@@ -105,7 +105,7 @@ async def download_corrected_csv(request: DownloadCsvRequest):
             continue
             
         atype = action.get("action_type")
-        if atype not in ("update_cell_value", "update_status"):
+        if atype not in ("update_cell_value", "update_status", "add_comment"):
             logger.warning(f"Skipping action {aid} of type {atype}")
             continue
 
@@ -127,8 +127,16 @@ async def download_corrected_csv(request: DownloadCsvRequest):
             target_key = str(column_title)
             actual_key = next((k for k in records[rec_idx].keys() if k.lower() == target_key.lower()), target_key)
             old_val = records[rec_idx].get(actual_key)
-            records[rec_idx][actual_key] = "" if proposed_value is None else str(proposed_value)
-            logger.info(f"Fixed Row {target_row_id} [{actual_key}]: '{old_val}' -> '{records[rec_idx][actual_key]}'")
+            old_val_str = "" if old_val is None else str(old_val)
+
+            if atype == "add_comment":
+                # AI Comment Injection: Prefix merge
+                records[rec_idx][actual_key] = f"{proposed_value} | {old_val_str}"
+                logger.info(f"Injected AI Comment Row {target_row_id} [{actual_key}]: {proposed_value}")
+            else:
+                # Direct overwrite
+                records[rec_idx][actual_key] = "" if proposed_value is None else str(proposed_value)
+                logger.info(f"Fixed Row {target_row_id} [{actual_key}]: '{old_val_str}' -> '{records[rec_idx][actual_key]}'")
         else:
             logger.error(f"Failed to find Row {target_row_id} in {len(records)} records")
 

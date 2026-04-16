@@ -14,7 +14,7 @@ Start-Sleep -Seconds 3
 Write-Host "Starting Vite Frontend..." -ForegroundColor Green
 Start-Process -FilePath "powershell.exe" -ArgumentList "-NoExit -Command `"npx vite --host 0.0.0.0 --port 5173`"" -WorkingDirectory "$PSScriptRoot\frontend"
 
-Write-Host "`nAll services starting!`" -ForegroundColor Yellow
+Write-Host "`nAll services starting!" -ForegroundColor Yellow
 Write-Host "Frontend: http://localhost:5173"
 Write-Host "Backend API: http://localhost:8000/api"
 Write-Host "Swagger Docs: http://localhost:8000/docs"

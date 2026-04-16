@@ -29,7 +29,7 @@ class SmartsheetSimulator:
         dataset_name = os.path.basename(self.csv_path)
         return [{
             "id": "STRESS_TEST_001",
-            "name": f"Simulator Dataset — {dataset_name}",
+            "name": f"Simulator Dataset - {dataset_name}",
             "modified_at": datetime.now().isoformat()
         }]
     
@@ -82,7 +82,7 @@ class SmartsheetSimulator:
 
         metadata = {
             "sheet_id": "STRESS_TEST_001",
-            "sheet_name": f"Simulator Dataset — {os.path.basename(self.csv_path)}",
+            "sheet_name": f"Simulator Dataset - {os.path.basename(self.csv_path)}",
             "rows": len(records),
             "columns": len(columns),
             "url": "https://app.smartsheet.com/sheets/stress-test"
